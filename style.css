@@ -287,13 +287,14 @@ nav .navbar .links li .sub-menu li{
     margin: 2px 138px;
 }
 
+
 .hero-section .hero-two-flex .contant h2,.hero-section .hero-two-flex .contant h2 span{
     font-size: 3.75rem;
     line-height: 1;
     font-family: var(--fira-code-family) !important;
     font-weight: 600;
     margin-bottom: 35px;
-    margin-right: 27px;
+    /* margin-right: 27px; */
 }
 
 .hero-section .hero-two-flex .contant p{
@@ -370,7 +371,8 @@ font-weight: 600;
 .hero-section-background img:nth-child(4){
     top: 0;
     z-index: -1;
-    
+    border-color: #E2E8F0;
+    border: none;
 }
 
 
