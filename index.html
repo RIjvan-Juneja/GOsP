@@ -8,49 +8,52 @@
     <title>GOsP</title>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="navbar">
-                <i class='bx bx-menu'></i>
-                <div class="logo"><a href="#">GOsP</a></div>
-                <div class="nav-links">
-                    <div class="sidebar-logo">
-                        <span class="logo-name">GOsP</span>
-                        <i class='bx bx-x'></i>
-                    </div>
-                    <ul class="links">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">PROJECT</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li>
-                            <a href="#">LOGIN</a>
-                            <i class='bx bxs-chevron-down js-arrow arrow '></i>
-                            <ul class="js-sub-menu sub-menu">
-                                <li><a href="#">STUDENT</a></li>
-                                <li><a href="#">ADMIN</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
+    <!-- <header> -->
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="#">GOsP</a></div>
+            <div class="nav-links">
+                <div class="sidebar-logo">
+                    <span class="logo-name">GOsP</span>
+                    <i class='bx bx-x'></i>
                 </div>
+                <ul class="links">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">PROJECT</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li>
+                        <a href="#">LOGIN</a>
+                        <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                        <ul class="js-sub-menu sub-menu">
+                            <li><a href="#">STUDENT</a></li>
+                            <li><a href="#">ADMIN</a></li>
+                        </ul>
+                    </li>
 
+                </ul>
             </div>
-        </nav>
-    </header>
+
+        </div>
+    </nav>
+    <!-- </header> -->
 
     <section class="hero-section">
         <div class="hero-two-flex">
             <div class="contant">
-                <h2> <span class="span-orange">GOsP</span> 2023 <br class="breack-line">
+                <h2> <span class="span-orange">GOsP</span> 2023 <br class="breck-line">
                     is back!</h2>
                 <p>Gyanmanjari Open Source Program is a 1-week long
                     <span class="span-orange">#OpenSource</span> program by GMIU.
-                    <span class="bold-span">20th May - 10th August 2023</span> 
+                    <span class="bold-span">20th May - 10th August 2023</span>
                 </p>
                 <div class="button-container">
                     <a href="" class="button-orange custome-btn">Register Here</a>
@@ -59,18 +62,280 @@
             <img src="assets/images/Hero_Image_Lite_Theme.svg" alt="img" class="hero-img">
         </div>
         <div class="hero-section-background">
-            <img src="https://user-images.githubusercontent.com/64256342/152588880-e94c9c2f-b16b-4a29-859e-503b6232709c.png" alt="">
-            <img src="https://user-images.githubusercontent.com/64256342/152650045-df82c3ea-e3ac-4bf2-acaa-14d80729384d.png" alt="">
-            <img src="https://user-images.githubusercontent.com/64256342/152650042-40a281d5-4bdc-40a0-bd06-d907023f1a04.png" alt="">
-            <img src="https://user-images.githubusercontent.com/64256342/152588822-2cb7c0fe-4361-40bb-891a-5c8b4d615ec2.png" alt="">
+            <img src="assets/images/1-hero-bg.png" alt="">
+            <img src="assets/images/2-hero-bg.png" alt="">
+            <img src="assets/images/3-hero-bg.png" alt="">
+            <img src="assets/images/4-hero-bg.png" alt="">
         </div>
     </section>
-    
+    <section class="guid-pdf">
+        <div class="guid-btn-container">
+            <a href="" class="custome-btn-button" download>Student Manual</a>
+            <a href="" class="custome-btn-button" download>Mentor Manual</a>
+        </div>
+    </section>
 
+    <section class="about-program">
+        <div class="about-container-flex">
+            <div class="about-video-content">
+                <video controls>
+                    <source src="assets/video/New tab - Personal - Microsoft​ Edge 2023-01-22 10-50-43.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+            <div class="about-text-content">
+                <h2 class="about-heading">About Gyanmanjari Open <span class="span-orange"> Source Program</span></h2>
+                <p class="about-paragraph">Gyanmanjari Open Source Program is a one-week-long Open-Source Program
+                    conducted every summer by the GMIU. With constant efforts, participants contribute to numerous
+                    projects under the extreme guidance of skilled mentors over these months. With such exposure,
+                    students begin to contribute to real-world projects from the comfort of their homes.</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="section-for-bg">
+        <section class="top-ten-student">
+            <div class="heading">
+                <h2 class="heading-main span-orange">Top Contributers</h2>
+                <span>Check out how enjoyable <span class="span-orange">GOsP</span>  was for the previous participants</span>
+            </div>
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile1.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile2.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile3.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile4.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile5.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile6.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
 
+        <section class="top-ten-mentor">
+            <div class="heading">
+                <h2 class="heading-main span-orange">Top Mentors</h2>
+            </div>
+            <div class="slide-container swiper1">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile1.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile2.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile3.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile4.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile5.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+                                <div class="card-image">
+                                    <!--<img src="images/profile6.jpg" alt="" class="card-img">-->
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">David Dell</h2>
+                                <p class="description">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                                <button class="button">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </section>
 
+    <section class="registation-cards-section">
+        
+    </section>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 3,
+            spaceBetween: 25,
+            loop: true,
+            centerSlide: 'true',
+            fade: 'true',
+            grabCursor: 'true',
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                950: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        
+    </script>
     <script>
         // search-box open close js code
         let navbar = document.querySelector(".navbar");
