@@ -1,0 +1,46 @@
+
+/*==================================================
+                guid-pdf section start  
+====================================================*/
+
+.guid-pdf {
+    margin: 90px auto;
+    max-width: 1300px;
+  }
+  
+  .guid-pdf .guid-btn-container {
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .guid-pdf .guid-btn-container a {
+    font-size: 28.5px;
+    padding: 10px 110px;
+    margin: 15px 0;
+    transition: .3s;
+  }
+  
+  .guid-pdf .guid-btn-container a:hover {
+    background-image: linear-gradient(to bottom right, #ea580c, #ff7a19);
+    transform: translateY(-5.5px);
+  
+  }
+  
+  @media (max-width:800px) {
+    .guid-pdf .guid-btn-container {
+      flex-direction: column;
+    }
+  
+    .guid-pdf .guid-btn-container a {
+      width: 350px;
+      font-size: 22.5px;
+      padding: 10px 80px;
+      margin: 15px 0;
+      transition: .3s;
+    }
+  }
+  
+  /*=============== guid-pdf section end =============*/
+  

@@ -1,0 +1,77 @@
+
+/*==================================================
+                about program section start  
+====================================================*/
+
+.about-program {
+    background-color: #FFECDE;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-program .about-container-flex {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 70px 0;
+  }
+  
+  .about-program .about-container-flex .about-video-content {
+    max-width: 50%;
+  }
+  
+  .about-program .about-container-flex .about-video-content video {
+    border-radius: 5px;
+  
+  }
+  
+  .about-program .about-container-flex .about-text-content {
+    max-width: 40%;
+  }
+  
+  .about-program .about-container-flex .about-text-content .about-heading,
+  .about-program .about-container-flex .about-text-content .about-heading span {
+    margin: 0 0 20px;
+    font-size: 40px;
+    font-family: var(--fira-code-family) !important;
+    /* color :#000000; */
+    font-weight: 600;
+    margin-bottom: 45px;
+  
+  }
+  
+  .about-program .about-container-flex .about-text-content .about-paragraph {
+    color: #1A202C;
+    font-size: 25px;
+    text-align: justify;
+    font-family: var(--rubik-family);
+  }
+  
+  @media (max-width:800px) {
+    .about-program .about-container-flex {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+  
+    .about-program .about-container-flex .about-video-content {
+      max-width: 100%;
+    }
+  
+    .about-program .about-container-flex .about-text-content {
+      margin-top: 25px;
+      max-width: 90%;
+    }
+  
+    .about-program .about-container-flex .about-text-content .about-heading,
+    .about-program .about-container-flex .about-text-content .about-heading {
+      font-size: 38px;
+    }
+  }
+  
+  
+  /*============= about program section end =========*/

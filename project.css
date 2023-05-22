@@ -69,7 +69,7 @@ a {
     flex-direction: column;
     align-items: center;
   }
-  .card-header {
+  .card-header-heading {
     font-size: 2rem;
     font-family: "Inter", sans-serif;
     padding: 1rem 0;
@@ -104,14 +104,14 @@ a {
     border-radius: 5px;
     text-align: center;
   }
-  .card-footer {
+  .card-footer-two-btn {
     width: 100%;
     margin-top: auto;
     padding-top: 1rem;
     display: flex;
     justify-content: space-evenly;
   }
-  .card-footer a {
+  .card-footer-two-btn a {
     font-family: "Inter", sans-serif;
     padding: 0.6rem 1rem;
     border-radius: 5px;
