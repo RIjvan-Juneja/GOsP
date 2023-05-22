@@ -11,10 +11,10 @@
                 <i class='bx bx-x'></i>
             </div>
             <ul class="links">
-                <li><a href="#">HOME</a></li>
+                <li><a href="index.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="project.html">PROJECT</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="project.php">PROJECT</a></li>
+                <li><a href="faq.php">FAQ</a></li>
                 <li><a href="#">CONTACT</a></li>
                 <li>
                     <a href="#">LOGIN</a>
