@@ -6,6 +6,7 @@ $first_name_error = $middle_name_error =  "";
 if (isset($_POST["submit"])) {
 
   $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
+  
   $middle_name = mysqli_real_escape_string($con, $_POST['middle_name']);
   $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
   $phone_number = mysqli_real_escape_string($con, $_POST['phone_number']);
@@ -15,13 +16,18 @@ if (isset($_POST["submit"])) {
   $branch = mysqli_real_escape_string($con, $_POST['branch']);
   $semester = mysqli_real_escape_string($con, $_POST['semester']);
   $github_link = mysqli_real_escape_string($con, $_POST['github_link']);
-  $user_type = "student";
-  $is_active = 0;
-  $is_delete = 0;
+  // $user_type = "student";
+  // $is_active = 0;
+  // $is_delete = 0;
 
-  if(empty($first_name) || $first_name = " "){
-    $first_name_error = "please enter a first name";
-  } else if 
+  // if(empty($first_name)  || $first_name = " "){
+  //   $first_name_error = "please enter a first name";
+  //   if(only_alphabet($first_name)){
+  //     $first_name_error = "only String are allowed";
+  //   }
+  // }else{
+  //   $first_name_error = "";
+  // }
 
   // $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
   // $stmt->bind_param("sssssssssis", $enrollment_number,$user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$cource,$branch,$semester,$github_link);
