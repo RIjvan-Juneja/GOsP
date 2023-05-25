@@ -1,9 +1,10 @@
 <?php
 include "Database/connect.php";
 include "common/function.php";
+$first_name_error = $middle_name_error =  "";
 
 if (isset($_POST["submit"])) {
-  
+
   $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
   $middle_name = mysqli_real_escape_string($con, $_POST['middle_name']);
   $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
@@ -18,9 +19,13 @@ if (isset($_POST["submit"])) {
   $is_active = 0;
   $is_delete = 0;
 
-  $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-  $stmt->bind_param("sssssssssis", $enrollment_number,$user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$cource,$branch,$semester,$github_link);
-  $result = $stmt->execute();
+  if(empty($first_name) || $first_name = " "){
+    $first_name_error = "please enter a first name";
+  } else if 
+
+  // $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+  // $stmt->bind_param("sssssssssis", $enrollment_number,$user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$cource,$branch,$semester,$github_link);
+  // $result = $stmt->execute();
 }
 
 ?>
@@ -59,6 +64,9 @@ if (isset($_POST["submit"])) {
       background-color: #696cff !important;
       border-color: #696cff;
       box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
+    }
+    .color-red{
+      color: red !important;
     }
   </style>
   <meta charset="utf-8" />
@@ -123,6 +131,7 @@ if (isset($_POST["submit"])) {
                             <input type="text" name="first_name" class="form-control" id="basic-icon-default-fullname"
                               placeholder="Your name" />
                           </div>
+                          <div class="form-text color-red"><?php echo $first_name_error; ?></div>
                         </div>
                         <div class="col-md-4 mb-3">
                           <label class="form-label" for="basic-icon-default-fullname">Middle Name</label>
