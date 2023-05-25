@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
   //     $first_name_error = "only String are allowed";
   //   }
   // }else{
-  //   $first_name_error = "";
+  //   $first_name_error = "please enter a first name";
   // }
 
   // $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
