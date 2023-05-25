@@ -7,6 +7,9 @@
     <!--import head -->
     <?php include 'include/head.php'; ?>
 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -66,20 +69,13 @@
                                                     3
                                                 </td>
                                                 <td><span class="badge bg-label-primary me-1">Active</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                <td><a href="" class="btn btn-icon btn-primary text-white">
+                                                     <i class="fas fa-eye"></i>
+                                                    </a>
+                                                    <a href="" class="btn btn-icon btn-secondary text-white">
+                                                        <i class='tf-icons bx bx-x fs-5'></i>
+                                                    </a></td>
+                                                
                                             </tr>
                                             
                                         </tbody>

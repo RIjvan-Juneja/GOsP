@@ -4,8 +4,12 @@
     data-template="vertical-menu-template-free">
 
 <head>
+
     <!--import head -->
     <?php include 'include/head.php'; ?>
+    
+ <!-- Font Awesome CDN link -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 
@@ -46,10 +50,41 @@
                                                 <th>Branch</th>
                                                 <th>Semester</th>
                                                 <th>Status</th>
+                                                <th>View</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <tr>
+                                                <td>
+                                                    <strong>201290116020</strong>
+                                                </td>
+                                                <td>Juneja Rijvan</td>
+                                                <td>
+                                                    B.E
+                                                </td>
+                                                <td>
+                                                    CE
+                                                </td>
+                                                <td>
+                                                    3
+                                                </td>
+                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
+                                                <td>
+                                                     <a href="" class="btn btn-icon btn-primary text-white">
+                                                     <i class="fas fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="" class="btn btn-icon btn-primary text-white">
+                                                        <i class='tf-icons bx bx-check fs-5'></i>
+                                                    </a>
+                                                    <a href="" class="btn btn-icon btn-secondary text-white">
+                                                        <i class='tf-icons bx bx-x fs-5'></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
                                             <tr>
                                                 <td>
                                                     <strong>201290116020</strong>
@@ -66,51 +101,21 @@
                                                 </td>
                                                 <td><span class="badge bg-label-warning me-1">Pending</span></td>
                                                 <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
+                                                     <a href="" class="btn btn-icon btn-primary text-white">
+                                                     <i class="fas fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="" class="btn btn-icon btn-primary text-white">
+                                                        <i class='tf-icons bx bx-check fs-5'></i>
+                                                    </a>
+                                                    <a href="" class="btn btn-icon btn-secondary text-white">
+                                                        <i class='tf-icons bx bx-x fs-5'></i>
+                                                    </a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <strong>201290116020</strong>
-                                                </td>
-                                                <td>Juneja Rijvan</td>
-                                                <td>
-                                                    B.E
-                                                </td>
-                                                <td>
-                                                    CE
-                                                </td>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            
+
+                                           
                                         </tbody>
                                     </table>
                                 </div>
@@ -140,7 +145,7 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
