@@ -1,5 +1,9 @@
 <?php
 include "Database/connect.php";
+include "common/function.php";
+
+$first_name_error = $middle_name_error = $last_name_error = $phone_error = $email_error = "";
+
 
 if (isset($_POST["submit"])) {
   
@@ -11,9 +15,30 @@ if (isset($_POST["submit"])) {
   $github_link = mysqli_real_escape_string($con, $_POST['github_link']);
   $user_type = "faculty";
 
-  $stmt = $con->prepare("INSERT INTO `user`(user_type,first_name,middle_name,last_name,phone_number,email,github_link)VALUES (?,?,?,?,?,?,?)");
-  $stmt->bind_param("sssssss", $user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$github_link);
-  $result = $stmt->execute();
+
+    // first name validation
+    $firstName = $_POST["first_name"];
+        $first_name_error = only_alphabet($firstName);
+     
+    // middle name validation    
+    $middleName = $_POST["middle_name"];
+        $middle_name_error = only_alphabet($middleName);
+    
+    //last name validation
+    $lastName = $_POST["last_name"];
+        $last_name_error = only_alphabet($lastName);
+
+    //phone no validation
+    $phoneNo = $_POST["phone_number"];
+        $phone_error = validateNumber($phoneNo);
+
+    //email validation
+    $mail = $_POST["email"];
+        $email_error = validateEmail($mail);
+
+//   $stmt = $con->prepare("INSERT INTO `user`(user_type,first_name,middle_name,last_name,phone_number,email,github_link)VALUES (?,?,?,?,?,?,?)");
+//   $stmt->bind_param("sssssss", $user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$github_link);
+//   $result = $stmt->execute();
 }
 
 ?>
@@ -50,6 +75,9 @@ if (isset($_POST["submit"])) {
             background-color: #696cff !important;
             border-color: #696cff;
             box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
+        }
+        .color-red{
+            color: red;
         }
     </style>
     <meta charset="utf-8" />
@@ -117,6 +145,7 @@ if (isset($_POST["submit"])) {
                                                         <input type="text" class="form-control"
                                                             name="first_name" placeholder="Your Name" />
                                                     </div>
+                                                    <div class="color-red"><?php echo $first_name_error; ?></div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <label class="form-label" for="basic-icon-default-fullname">Middle
@@ -129,6 +158,7 @@ if (isset($_POST["submit"])) {
                                                         <input type="text" class="form-control"
                                                             name="middle_name" placeholder="Father Name" />
                                                     </div>
+                                                    <div class="color-red"><?php echo $middle_name_error; ?></div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <label class="form-label" for="basic-icon-default-fullname">Last
@@ -141,6 +171,7 @@ if (isset($_POST["submit"])) {
                                                         <input type="text" class="form-control"
                                                             name="last_name" placeholder="Surename" />
                                                     </div>
+                                                    <div class="color-red"><?php echo $last_name_error; ?></div>
                                                 </div>
                                             </div>
 
@@ -155,7 +186,8 @@ if (isset($_POST["submit"])) {
                                                         </span>
                                                         <input type="number" class="form-control"
                                                             name="phone_number" placeholder="9999999999" />
-                                                    </div>
+                                                    </div><div class="color-red"><?php echo $phone_error; ?></div>
+
                                                 </div>
 
                                                 <div class="col-md-6 mb-3">
@@ -168,6 +200,7 @@ if (isset($_POST["submit"])) {
                                                             class="form-control" placeholder="xyz@gmail.com" />
                                                     </div>
                                                     <div class="form-text">You can use letters, numbers & periods</div>
+                                                    <div class="color-red"><?php echo $email_error; ?></div>
                                                 </div>
                                             </div>
 
