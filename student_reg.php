@@ -1,12 +1,12 @@
 <?php
 include "Database/connect.php";
 include "common/function.php";
-$first_name_error = $middle_name_error =  "";
+$first_name_error = $middle_name_error = $last_name_error = $phone_number_error = $enrollment_number_error = $email_error = $cource_error = $branch_error =  
+ $semester_error = $github_link_error = "";
 
 if (isset($_POST["submit"])) {
 
   $first_name = mysqli_real_escape_string($con, $_POST['first_name']);
-  
   $middle_name = mysqli_real_escape_string($con, $_POST['middle_name']);
   $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
   $phone_number = mysqli_real_escape_string($con, $_POST['phone_number']);
@@ -20,14 +20,41 @@ if (isset($_POST["submit"])) {
   // $is_active = 0;
   // $is_delete = 0;
 
-  // if(empty($first_name)  || $first_name = " "){
-  //   $first_name_error = "please enter a first name";
-  //   if(only_alphabet($first_name)){
-  //     $first_name_error = "only String are allowed";
-  //   }
-  // }else{
-  //   $first_name_error = "please enter a first name";
-  // }
+  // first name validation
+  $firstName = $_POST["first_name"];
+  $first_name_error = only_alphabet($firstName);
+
+  //middle name validation
+  $middleName = $_POST["middle_name"];
+  $middle_name_error=only_alphabet($middleName);
+
+  //last name validation
+  $lastName = $_POST["last_name"];
+  $last_name_error=only_alphabet($lastName);
+
+  // phone number validation
+  $phoneNumber = $_POST['phone_number'];
+  $phone_number_error = validateNumber($phoneNumber);
+
+  // enr no validatio
+  $enrNo = $_POST["enrollment_number"];
+  $enrollment_number_error = validateEnrNumber($enrNo);
+
+  // email validation
+  $email_address = $_POST["email"];
+  $email_error = validateEmail($email_address);
+
+  //course validation
+  $course = $_POST["cource"];
+  $cource_error = validateDropDown($course);
+
+  //branch validation
+  $branch_data = $_POST["branch"];
+  $branch_error = validateDropDown($branch_data);
+
+  // semester validation
+  $sem = $_POST["semester"];
+  $semester_error = validateDropDown($sem);
 
   // $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
   // $stmt->bind_param("sssssssssis", $enrollment_number,$user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$cource,$branch,$semester,$github_link);
@@ -148,6 +175,7 @@ if (isset($_POST["submit"])) {
                             <input type="text" name="middle_name" class="form-control" id="basic-icon-default-fullname"
                               placeholder="father name" />
                           </div>
+                          <div class="form-text color-red"><?php echo $middle_name_error; ?></div>
                         </div>
                         <div class="col-md-4 mb-3">
                           <label class="form-label" for="basic-icon-default-fullname">Last Name</label>
@@ -158,6 +186,7 @@ if (isset($_POST["submit"])) {
                             <input type="text" name="last_name" class="form-control" id="basic-icon-default-fullname"
                               placeholder="Surename" />
                           </div>
+                          <div class="form-text color-red"><?php echo $last_name_error; ?></div>
                         </div>
                       </div>
                       <div class="row">
@@ -170,6 +199,7 @@ if (isset($_POST["submit"])) {
                             <input type="number" name="phone_number" class="form-control" id="basic-icon-default-fullname"
                               placeholder="9999999999" />
                           </div>
+                          <div class="form-text color-red"><?php echo $phone_number_error; ?></div>
                         </div>
 
                         <div class="col-md-6 mb-3">
@@ -181,6 +211,7 @@ if (isset($_POST["submit"])) {
                             <input type="number" name="enrollment_number" class="form-control" id="basic-icon-default-fullname"
                               placeholder="111111111111" />
                           </div>
+                          <div class="form-text color-red"><?php echo $enrollment_number_error; ?></div>
                         </div>
 
                       </div>
@@ -192,23 +223,25 @@ if (isset($_POST["submit"])) {
                           <input type="text" name="email" id="basic-icon-default-email" class="form-control" placeholder="xyz2@gmail.com" />
                         </div>
                         <div class="form-text">You can use letters, numbers & periods</div>
+                        <div class="form-text color-red"><?php echo $email_error; ?></div>
                       </div>
                       <div class="row">
                         <div class="mb-3 col-md-4">
                           <label for="exampleFormControlSelect1" class="form-label">Cource</label>
 
-                          <select name="cource" class="form-select" id="exampleFormControlSelect1">
-                            <option selected>select cource</option>
+                          <select name="cource" class="form-select" id="exampleFormControlSelect1" >
+                            <option value="">select cource</option>
                             <option value="BE">B.E</option>
                             <option value="MCA">MCA</option>
                             <option value="DIPLOMA">DIPLOMA</option>
                             <option value="D2D">D2D</option>
                           </select>
+                          <div class="form-text color-red"><?php echo $cource_error; ?></div>
                         </div>
                         <div class="mb-3 col-md-4">
                           <label for="exampleFormControlSelect1" class="form-label">Branch</label>
-                          <select name="branch" class="form-select" id="exampleFormControlSelect1">
-                            <option selected>select  branch</option>
+                          <select name="branch" class="form-select" id="exampleFormControlSelect1" >
+                            <option value="">select  branch</option>
                             <option value="IT">Information Technology</option>
                             <option value="CS">Computer Science</option>
                             <option value="MCA">Master of Computer Application</option>
@@ -216,11 +249,12 @@ if (isset($_POST["submit"])) {
                             <option value="CE">Civil Engineering</option>
                             <option value="EE">Electrical Engineering</option>
                           </select>
+                          <div class="form-text color-red"><?php echo $branch_error; ?></div>
                         </div>
                         <div class="mb-3 col-md-4">
                           <label for="exampleFormControlSelect1" class="form-label">Semester</label>
-                          <select name="semester" class="form-select" id="exampleFormControlSelect1">
-                            <option selected>select semester</option>
+                          <select name="semester" class="form-select" id="exampleFormControlSelect1" >
+                            <option value="">select semester</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -230,6 +264,7 @@ if (isset($_POST["submit"])) {
                             <option value="7">7</option>
                             <option value="8">8</option>
                           </select>
+                          <div class="form-text color-red"><?php echo $semester_error; ?></div>
                         </div>
                       </div>
 
@@ -246,14 +281,14 @@ if (isset($_POST["submit"])) {
                       <div class="row">
                         <div class="mb-3 col-md-6">
                           <label for="formFile" class="form-label">Professional Photo </label>
-                          <input class="form-control" type="file" id="formFile name="photo">
+                          <input class="form-control" type="file" id="formFile name="photo" >
                           <span class="form-text"> * only image allowded</span>
 
                         </div>
 
                         <div class="mb-3 col-md-6">
                           <label for="formFile" class="form-label">collage ID Card</label>
-                          <input class="form-control" type="file" id="formFile" name="collage_id">
+                          <input class="form-control" type="file" id="formFile" name="collage_id" >
                           <span class="form-text"> * only pdf allowded</span>
 
                         </div>

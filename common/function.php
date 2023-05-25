@@ -2,12 +2,56 @@
 // check if name only contains letters and whitespace
 function only_alphabet($data)
 {
-	if (!preg_match('/^[a-zA-Z ]*$/', $data)) {
-		return FALSE;
-	} else {
-		return $data;
-	}
+    if(empty($data)){
+        return "please do not leave this field empty";
+    }
+	if (!preg_match("/^[a-zA-Z]+$/", $data)) {
+        return "Invalid ! Please enter only alphabets.";
+    } 
 }
+function validateNumber($data) {
+    // Remove all non-numeric characters from the phone number
+    $cleanNumber = preg_replace('/\D/', '', $data);
+    // check for empty field
+    if(empty($data)){
+        return "please do not leave this field empty";
+    }
+    // Check if the cleaned phone number matches the original input
+    if ($cleanNumber !== $data) {
+        return 'Invalid! It should contain only numbers and no spaces.';
+    }
+
+    // Check if the phone number has a length of 10 digits
+    if (strlen($cleanNumber) !== 10) {
+        return 'Invalid! It should be 10 digits long.';
+    }
+
+    // Other validation rules can be added here if needed
+
+    return ""; // Empty string indicates validation success
+}
+function validateEnrNumber($data) {
+    // Remove all non-numeric characters from the phone number
+    $cleanNumber = preg_replace('/\D/', '', $data);
+     // check for empty field
+     if(empty($data)){
+        return "please do not leave this field empty";
+    }
+    // Check if the cleaned phone number matches the original input
+    if ($cleanNumber !== $data) {
+        return 'Invalid! It should contain only numbers and no spaces.';
+    }
+
+    // Check if the phone number has a length of 10 digits
+    if (strlen($cleanNumber) !== 12) {
+        return 'Invalid! It should be 12 digits long.';
+    }
+
+    // Other validation rules can be added here if needed
+
+    return ""; // Empty string indicates validation success
+}
+
 
 function validate_data($data)
 {
@@ -29,6 +73,27 @@ function filterEmail($field)
 		return FALSE;
 	}
 }
+
+function validateDropDown($selectedOption) {
+    if (empty($selectedOption)) {
+        return "Please select an option.";
+    }
+}
+
+function validateEmail($email) {
+     // check for empty field
+     if(empty($email)){
+        return "please do not leave this field empty";
+    }
+    // Sanitize email address
+    $email = filter_var(trim($email), FILTER_SANITIZE_EMAIL);
+
+    // Validate email address
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "Invalid email";
+    } 
+}
+
 function filterString($field)
 {
 	// Sanitize string
