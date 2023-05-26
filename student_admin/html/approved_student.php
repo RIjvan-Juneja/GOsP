@@ -76,11 +76,12 @@ $result = mysqli_query($con,$query);
                                                     <a href="" class="btn btn-icon btn-secondary text-white">
                                                         <i class='tf-icons bx bx-x fs-5'></i>
                                                     </a></td>
+                                                </tr>
 
                                           <?php
                                                 }
                                           ?>
-                                            </tr>
+                                            
                                             
                                         </tbody>
                                     </table>

@@ -36,8 +36,8 @@
                     <div class="container-xxl flex-grow-1 container-p-y">
 
 <?php
-include('C:\xampp\htdocs\GOsP\Database\connect.php');
-$query = "SELECT *FROM user WHERE user_type = 'student'AND status = 'pending';";
+include('../../Database/connect.php');
+$query = "SELECT * FROM user WHERE user_type = 'student' AND status = 'pending'";
 $result = mysqli_query($con,$query);
 ?>
 
@@ -75,20 +75,20 @@ $result = mysqli_query($con,$query);
                                                 <td><a href="" class="btn btn-icon btn-primary text-white">
                                                      <i class="fas fa-eye"></i>
                                                     </a>
-                                                <td><a href="" class="btn btn-icon btn-primary text-white">
-                                                     <i class="fas fa-eye"></i>
+                                                <td><a href="approve.php?enrollment_number=<?php echo $row['enrollment_number']?>" class="btn btn-icon btn-primary text-white">
+                                                <i class="tf-icons bx bx-check fs-5"></i>
                                                     </a>
-                                                    <a href="approve.php?enrollment_number=<?php echo $row['enrollment_number']?>" class="btn btn-icon btn-secondary text-white">
+                                                    <a href="reject.php?enrollment_number=<?php echo $row['enrollment_number']?>" class="btn btn-icon btn-secondary text-white">
                                                         <i class='tf-icons bx bx-x fs-5'></i>
                                                     </a></td>
+                                                    </tr>
+
 
                                           <?php
                                                 }
                                           ?>
                                                     
                                                 </td>
-                                            </tr>
-
                                            
                                         </tbody>
                                     </table>
