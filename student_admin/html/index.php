@@ -179,8 +179,22 @@
                             </div>
                             
                           </div>
-                          <span class="fw-semibold d-block mb-1">Projects</span>
-                          <h3 class="card-title mb-2">628</h3>
+                          <span class="fw-semibold d-block mb-1">Projects
+                          <?php
+                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
+                          $total_student_query = "SELECT * from projects;";
+                            $total_student_query_run = mysqli_query($con,$total_student_query);
+                            if($total_student = mysqli_num_rows($total_student_query_run ))
+                            {
+                              echo '<h3 class="card-title text-nowrap mb-2">'.$total_student.'</h3>';
+                            }
+                            else
+                            {
+                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                            }
+                            ?>
+
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -199,8 +213,22 @@
                             </div>
                             
                           </div>
-                          <span class="fw-semibold d-block mb-1">Mentors</span>
-                          <h3 class="card-title mb-2">628</h3>
+                          <span class="fw-semibold d-block mb-1">Mentors
+                          <?php
+                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
+                          $total_student_query = "SELECT * from projects;";
+                            $total_student_query_run = mysqli_query($con,$total_student_query);
+                            if($total_student = mysqli_num_rows($total_student_query_run ))
+                            {
+                              echo '<h3 class="card-title text-nowrap mb-2">'.$total_student.'</h3>';
+                            }
+                            else
+                            {
+                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                            }
+                            ?>
+                          </span>
+                          
                         </div>
                       </div>
                     </div>
