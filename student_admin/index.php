@@ -5,9 +5,9 @@ include "../common/function.php";
 session_start();
 $login_status_error="";
 // Check if the user is already logged in
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['user_id'])) {
   // User is already logged in, redirect to the home page or dashboard
-  header('Location: student_admin\index.php');
+  header('Location: html\index.php');
   exit();
 }
 
@@ -30,12 +30,17 @@ if (isset($_POST['sign_in'])) {
 
     $user_id = $row['user_id'];
     $_SESSION['user_id'] = $user_id;
-    $login_status = "success";
 
-    header("Location: http://localhost/GOsP/student_admin/html/index.php");
+    $_SESSION['status'] = "Logged In Successfully.";
+    $_SESSION['status_code'] = "success";
+    echo "<script>setTimeout(function(){window.location='html/index.php'},1000)</script>";
+
+    // header("Location: http://localhost/GOsP/student_admin/");
 
   }else{
-    $login_status = "failed";
+    $_SESSION['status'] = "Invalid Username or Password.";
+    $_SESSION['status_code'] = "error";
+    echo "<script>setTimeout(function(){window.location='index.php'},1000)</script>";
   }
 
 }
@@ -86,8 +91,33 @@ if (isset($_POST['sign_in'])) {
   <?php include "../componants/header/header.php"; ?>
 
   <!-- Content -->
-
+  
   <div class="container-xxl">
+    <?php if(isset($_SESSION['status'])){
+      if($_SESSION['status_code'] == "success"){
+        echo '<div class="bs-toast toast toast-placement-ex m-2 fade bg-primary top-0 end-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-header">
+          <i class="bx bx-bell me-2"></i>
+          <div class="me-auto fw-semibold">Welcome to Student Admin </div>
+          <small>5 sec ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Login Successfully</div>
+      </div>';
+      } elseif($_SESSION['status_code'] == "error"){
+        echo '<div class="bs-toast toast toast-placement-ex m-2 fade bg-primary top-0 end-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-header">
+          <i class="bx bx-bell me-2"></i>
+        
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Error</div>
+      </div>';
+      }
+      
+    }?>
+  
     <div class="authentication-wrapper authentication-basic container-p-y">
       <div class="authentication-inner">
         <!-- Register -->

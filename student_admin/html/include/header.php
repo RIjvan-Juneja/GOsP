@@ -1,3 +1,4 @@
+
 <!-- Navbar -->
 
 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -12,8 +13,6 @@
        
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -34,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">John Doe</span>
+                                    <span class="fw-semibold d-block"><?php echo $name; ?></span>
                                     <small class="text-muted">Admin</small>
                                 </div>
                             </div>
@@ -45,7 +44,7 @@
                     </li>
                    
                     <li>
-                        <a class="dropdown-item" href="auth-login-basic.html">
+                        <a class="dropdown-item" href="logout.php">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">Log Out</span>
                         </a>
