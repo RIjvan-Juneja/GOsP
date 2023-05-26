@@ -50,8 +50,23 @@
                             </div>
                             
                           </div>
-                          <span class="d-block mb-1">Total Students</span>
-                          <h3 class="card-title text-nowrap mb-2">2,456</h3>
+                          <span class="d-block mb-1">Total Students
+                            <?php
+                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
+                            $total_student_query = "SELECT * from user where user_type = 'student';";
+                            $total_student_query_run = mysqli_query($con,$total_student_query);
+                            if($total_student = mysqli_num_rows($total_student_query_run ))
+                            {
+                              echo '<h3 class="card-title text-nowrap mb-2">'.$total_student.'</h3>';
+                            }
+                            else
+                            {
+                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                            }
+
+                            ?>
+                          </span>
+                          
                         </div>
                       </div>
                     </div>
@@ -65,8 +80,21 @@
                               <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Total Faculty</span>
-                          <h3 class="card-title mb-2">857</h3>
+                          <span class="fw-semibold d-block mb-1">Total Faculty
+                            <?php
+                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
+                          $total_student_query = "SELECT * from user where user_type = 'faculty';";
+                            $total_student_query_run = mysqli_query($con,$total_student_query);
+                            if($total_student = mysqli_num_rows($total_student_query_run ))
+                            {
+                              echo '<h3 class="card-title text-nowrap mb-2">'.$total_student.'</h3>';
+                            }
+                            else
+                            {
+                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                            }
+                            ?>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -85,8 +113,21 @@
                             </div>
                             
                           </div>
-                          <span class="fw-semibold d-block mb-1">Approved Students</span>
-                          <h3 class="card-title mb-2">628</h3>
+                          <span class="fw-semibold d-block mb-1">Approved Students
+                          <?php
+                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
+                          $total_student_query = "SELECT * from user where status = 'active';";
+                            $total_student_query_run = mysqli_query($con,$total_student_query);
+                            if($total_student = mysqli_num_rows($total_student_query_run ))
+                            {
+                              echo '<h3 class="card-title text-nowrap mb-2">'.$total_student.'</h3>';
+                            }
+                            else
+                            {
+                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                            }
+                            ?>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -105,8 +146,21 @@
                             </div>
                             
                           </div>
-                          <span class="fw-semibold d-block mb-1">Pending Students</span>
-                          <h3 class="card-title mb-2">628</h3>
+                          <span class="fw-semibold d-block mb-1">Pending Students
+                          <?php
+                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
+                          $total_student_query = "SELECT * from user where status = 'pending';";
+                            $total_student_query_run = mysqli_query($con,$total_student_query);
+                            if($total_student = mysqli_num_rows($total_student_query_run ))
+                            {
+                              echo '<h3 class="card-title text-nowrap mb-2">'.$total_student.'</h3>';
+                            }
+                            else
+                            {
+                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                            }
+                            ?>
+                          </span>
                         </div>
                       </div>
                     </div>

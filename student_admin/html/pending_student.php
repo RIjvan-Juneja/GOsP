@@ -35,10 +35,16 @@
 
                     <div class="container-xxl flex-grow-1 container-p-y">
 
+<?php
+include('C:\xampp\htdocs\GOsP\Database\connect.php');
+$query = "SELECT *FROM user WHERE user_type = 'student'AND status = 'pending';";
+$result = mysqli_query($con,$query);
+?>
+
 
                         <!-- ================ card section start =======================-->
                         <div class="card">
-                            <h5 class="card-header">Total Student</h5>
+                            <h5 class="card-header">Pending Student</h5>
                             <div class="card-body">
                                 <div class="table-responsive text-nowrap">
                                     <table class="table table-bordered">
@@ -56,62 +62,30 @@
                                         </thead>
                                         <tbody>
                                         <tr>
-                                                <td>
-                                                    <strong>201290116020</strong>
-                                                </td>
-                                                <td>Juneja Rijvan</td>
-                                                <td>
-                                                    B.E
-                                                </td>
-                                                <td>
-                                                    CE
-                                                </td>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                                                <td>
-                                                     <a href="" class="btn btn-icon btn-primary text-white">
+                                        <?php
+                                                while($row = mysqli_fetch_assoc($result))
+                                                {
+                                                ?>
+                                                <td><?php echo $row['enrollment_number']; ?></td>
+                                                <td><?php echo implode(' ', array($row['first_name'], $row['middle_name'])); ?></td>
+                                                <td><?php echo $row['cource'];?></td>
+                                                <td><?php echo $row['branch'];  ?></td>
+                                                <td><?php echo $row['semester'];  ?></td>
+                                                <td><span class="badge bg-label-primary me-1">Pending</span></td>
+                                                <td><a href="" class="btn btn-icon btn-primary text-white">
                                                      <i class="fas fa-eye"></i>
                                                     </a>
-                                                </td>
-                                                <td>
-                                                    <a href="" class="btn btn-icon btn-primary text-white">
-                                                        <i class='tf-icons bx bx-check fs-5'></i>
+                                                <td><a href="" class="btn btn-icon btn-primary text-white">
+                                                     <i class="fas fa-eye"></i>
                                                     </a>
-                                                    <a href="" class="btn btn-icon btn-secondary text-white">
+                                                    <a href="approve.php?enrollment_number=<?php echo $row['enrollment_number']?>" class="btn btn-icon btn-secondary text-white">
                                                         <i class='tf-icons bx bx-x fs-5'></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                                    </a></td>
 
-                                            <tr>
-                                                <td>
-                                                    <strong>201290116020</strong>
-                                                </td>
-                                                <td>Juneja Rijvan</td>
-                                                <td>
-                                                    B.E
-                                                </td>
-                                                <td>
-                                                    CE
-                                                </td>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                                                <td>
-                                                     <a href="" class="btn btn-icon btn-primary text-white">
-                                                     <i class="fas fa-eye"></i>
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a href="" class="btn btn-icon btn-primary text-white">
-                                                        <i class='tf-icons bx bx-check fs-5'></i>
-                                                    </a>
-                                                    <a href="" class="btn btn-icon btn-secondary text-white">
-                                                        <i class='tf-icons bx bx-x fs-5'></i>
-                                                    </a>
+                                          <?php
+                                                }
+                                          ?>
+                                                    
                                                 </td>
                                             </tr>
 
