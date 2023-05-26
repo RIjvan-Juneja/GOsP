@@ -1,3 +1,30 @@
+
+
+<?php
+include "../../Database/connect.php";
+// Start the session
+session_start();
+//check user is logged or not
+if (!isset($_SESSION['user_id'])) {
+ header('Location: http://localhost/GOsP/student_admin/index.php');
+ exit();
+
+}else{
+
+echo $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
+$stmt = $con->prepare("SELECT * FROM `student_admin` where id =?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+    $name = !empty($row['name']) ? $row['name'] : "";
+} else {
+    $name = "";
+}
+}
+?>
 <!DOCTYPE html>
  
 <html
