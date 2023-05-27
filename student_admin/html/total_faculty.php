@@ -35,14 +35,14 @@
 
 <?php
 include('C:\xampp\htdocs\GOsP\Database\connect.php');
-$query = "SELECT * FROM user WHERE user_type = 'student';";
+$query = "SELECT * FROM user WHERE user_type = 'faculty';";
 $result = mysqli_query($con,$query);
 ?>
 
 
                         <!-- ================ card section start =======================-->
                         <div class="card">
-                            <h5 class="card-header">Total Student</h5>
+                            <h5 class="card-header">Total Faculty</h5>
                             <div class="card-body">
                                 <div class="table-responsive text-nowrap">
                                     <table class="table table-bordered">
