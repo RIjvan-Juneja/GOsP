@@ -34,7 +34,7 @@
 
 
 <?php
-include('C:\xampp\htdocs\GOsP\Database\connect.php');
+include('../../Database/connect.php');
 $query = "SELECT * FROM user WHERE user_type = 'faculty';";
 $result = mysqli_query($con,$query);
 ?>
@@ -48,13 +48,11 @@ $result = mysqli_query($con,$query);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Enrollment No</th>
+                                                <th>Faculty ID</th>
                                                 <th>Name</th>
-                                                <th>Course</th>
-                                                <th>Branch</th>
-                                                <th>Semester</th>
-                                                <th>Status</th>
-                                                <th>VIEW</th>
+                                                <th>Number</th>
+                                                <th>Email</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -63,15 +61,17 @@ $result = mysqli_query($con,$query);
                                                 while($row = mysqli_fetch_assoc($result))
                                                 {
                                                 ?>
-                                                <td><?php echo $row['enrollment_number']; ?></td>
+                                                <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo implode(' ', array($row['first_name'], $row['middle_name'])); ?></td>
-                                                <td><?php echo $row['cource'];?></td>
-                                                <td><?php echo $row['branch'];  ?></td>
-                                                <td><?php echo $row['semester'];  ?></td>
-                                                <td><span class="badge bg-label-success me-1">Completed</span></td>
-                                                <td>
-                                                <a href="" class="btn btn-icon btn-primary text-white">
-                                                     <i class="fas fa-eye"></i>
+                                                <td><?php echo $row['phone_number'];?></td>
+                                                <td><?php echo $row['email'];  ?></td>
+                                                <td><a href="" class="btn btn-icon btn-primary text-white">
+                                                <i class="tf-icons bx bx-check fs-5"></i>
+                                                    </a>
+                                                    <a href="" class="btn btn-icon btn-secondary text-white">
+                                                        <i class='tf-icons bx bx-x fs-5'></i>
+                                                    </a></td>
+                                                    </tr>
                                                     </a>
                                                 </td>
 
