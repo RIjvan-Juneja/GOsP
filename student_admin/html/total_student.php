@@ -34,7 +34,7 @@
 
 
 <?php
-include('C:\xampp\htdocs\GOsP\Database\connect.php');
+include('../../Database/connect.php');
 $query = "SELECT * FROM user WHERE user_type = 'student';";
 $result = mysqli_query($con,$query);
 ?>
