@@ -53,7 +53,8 @@ $result = mysqli_query($con,$query);
                                                 <th>Description</th>
                                                 <th>Mentor ID</th>
                                                 <th>Technology</th>
-                                                <th>Github Repo Link</th>
+                                                <th>View</th>
+                                               
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -67,7 +68,11 @@ $result = mysqli_query($con,$query);
                                                 <td><?php echo $row['description'];?></td>
                                                 <td><?php echo $row['mentor_id'];  ?></td>
                                                 <td><?php echo $row['technology_used'];  ?></td>
-                                                <td><?php echo $row['github_repo_link'];  ?></td>
+                                                <td>
+                                                <a href="" class="btn btn-icon btn-primary text-white">
+                                                     <i class="fas fa-eye"></i>
+                                                    </a>
+                                                </td>
                                                 </tr>
                                                     </a>
                                                 </td>
