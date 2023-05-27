@@ -74,13 +74,11 @@ $result = mysqli_query($con,$query);
                                                      <i class="fas fa-eye"></i>
                                                     </a>
                                                 </td>
-
-
+                                                </tr>
                                           <?php
                                                 }
                                           ?>
                                                 </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
