@@ -28,8 +28,9 @@
         </div>
         <div class="projects-search-box">
             <div class="field"><input class="input" type="text"
-                    placeholder="Search projects using project name, topics and mentor" value=""></div>
+                    placeholder="Search projects using project name, topics and mentor" id="search" value=""></div>
         </div>
+        <div id="table-data">
         <div class="project-card-grid">
             <?php
             $stmt = $con->prepare("SELECT u.first_name, u.last_name, p.id as project_id, p.project_name, p.description, p.technology_used, p.github_repo_link FROM projects p JOIN user u ON p.mentor_id = u.id Where p.is_active=1 AND p.is_delete=0");
@@ -51,9 +52,10 @@
                             ?>
                         </section>
                     </div>
-                    <footer class="card-footer-two-btn"><a class="button" href="https://github.com/rajivharlalka/go-space"
-                            target="_blank" rel="noopener noreferrer">View Project</a><a class="button"
-                            href="" target="_blank" rel="noopener noreferrer">More details</a></footer>
+                    <footer class="card-footer-two-btn">
+                        <a class="button" href="<?php echo $row['github_repo_link']; ?>" target="_blank" rel="noopener noreferrer">View Project</a>
+                        <a class="button" href="view_project.php?id=<?php echo $row['project_id']; ?>" target="_blank" rel="noopener noreferrer">More details</a>
+                    </footer>
                 </div>
                 <?php
             }
@@ -62,10 +64,32 @@
 
            <br>
     </div>
-
+    </div>
     <!-- <footer> -->
     <?php include "componants/footer/footer.php"; ?>
     <!-- </footer> -->
+
+    <script src="assets/js/jquery.js"></script>
+
+    <script>
+  $(document).ready(function(){
+
+        // Live Search
+     $("#search").on("keyup",function(){
+       var search_term = $(this).val();
+
+       $.ajax({
+         url: "ajax-live-search.php",
+         type: "POST",
+         data : {search:search_term },
+         success: function(data) {
+           $("#table-data").html(data);
+         }
+       });
+     });
+  });
+
+    </script>
 </body>
 
 </html>

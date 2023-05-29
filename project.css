@@ -88,6 +88,7 @@ a {
   .card-content .content {
     font-size: 1rem;
     color: #666;
+    text-align: justify;
     font-family: "Inter", sans-serif;
     margin: 1rem 0;
   }
