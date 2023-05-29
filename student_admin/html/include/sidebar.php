@@ -52,12 +52,19 @@
                 <div data-i18n="Analytics">ACTIVE STUDENT</div>
             </a>
         </li>
+        <!-- SUB-PRODUCTS -->
+        <li class="menu-item">
+            <a href="total_faculty.php" class="menu-link">
+              <i class='menu-icon tf-icons bx bx-user'></i>
+                <div data-i18n="Analytics">FACULTY</div>
+            </a>
+        </li>
 
         <!-- BRANDS -->
         <li class="menu-item">
-            <a href="index.php" class="menu-link">
+            <a href="projects.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">BRANDS</div>
+                <div data-i18n="Analytics">PROJECTS</div>
             </a>
         </li>
 

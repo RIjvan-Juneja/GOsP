@@ -35,25 +35,26 @@
 
 <?php
 include('../../Database/connect.php');
-$query = "SELECT * FROM user WHERE user_type = 'faculty';";
+$query = "SELECT * FROM projects ";
 $result = mysqli_query($con,$query);
 ?>
 
 
                         <!-- ================ card section start =======================-->
                         <div class="card">
-                            <h5 class="card-header">Total Faculty</h5>
+                            <h5 class="card-header">Total Projects Available</h5>
                             <div class="card-body">
                                 <div class="table-responsive text-nowrap">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Faculty ID</th>
-                                                <th>Name</th>
-                                                <th>Number</th>
-                                                <th>Email</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th>Project ID</th>
+                                                <th>Project Name</th>
+                                                <th>Description</th>
+                                                <th>Mentor ID</th>
+                                                <th>Technology</th>
+                                                <th>View</th>
+                                               
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -63,17 +64,16 @@ $result = mysqli_query($con,$query);
                                                 {
                                                 ?>
                                                 <td><?php echo $row['id']; ?></td>
-                                                <td><?php echo implode(' ', array($row['first_name'], $row['middle_name'])); ?></td>
-                                                <td><?php echo $row['phone_number'];?></td>
-                                                <td><?php echo $row['email'];  ?></td>
-                                                <td><?php echo $row['status'];  ?></td>
-                                                <td><a href="f_approve.php?id=<?php echo $row['id']?>" class="btn btn-icon btn-primary text-white">
-                                                <i class="tf-icons bx bx-check fs-5"></i>
+                                                <td><?php echo $row['project_name'];?></td>
+                                                <td><?php echo $row['description'];?></td>
+                                                <td><?php echo $row['mentor_id'];  ?></td>
+                                                <td><?php echo $row['technology_used'];  ?></td>
+                                                <td>
+                                                <a href="" class="btn btn-icon btn-primary text-white">
+                                                     <i class="fas fa-eye"></i>
                                                     </a>
-                                                    <a href="f_reject.php?id=<?php echo $row['id']?>" class="btn btn-icon btn-secondary text-white">
-                                                        <i class='tf-icons bx bx-x fs-5'></i>
-                                                    </a></td>
-                                                    </tr>
+                                                </td>
+                                                </tr>
                                                     </a>
                                                 </td>
 
