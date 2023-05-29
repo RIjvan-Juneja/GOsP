@@ -12,7 +12,8 @@ WHERE p.technology_used LIKE '%{$search_value}%'
     OR u.first_name LIKE '%{$search_value}%' 
     OR u.last_name LIKE '%{$search_value}%' 
     OR u.middle_name LIKE '%{$search_value}%' 
-    OR p.project_tag LIKE '%{$search_value}%' ";
+    OR p.project_tag LIKE '%{$search_value}%'
+    OR p.project_name LIKE '%{$search_value}%' ";
 
 $result = mysqli_query($con, $sql) or die("SQL Query Failed.");
 $output = "";
