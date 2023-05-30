@@ -6,7 +6,7 @@
 <head>
     <!--import head -->
     <?php include 'include/head.php'; ?>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
 </head>
@@ -32,13 +32,11 @@
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
 
-
-<?php
-include('../../Database/connect.php');
-$query = "SELECT * FROM projects ";
-$result = mysqli_query($con,$query);
-?>
-
+                        <?php
+                        include('../../Database/connect.php');
+                        $query = "SELECT u.first_name, u.last_name, p.id as project_id, p.project_name, p.technology_used FROM projects p JOIN user u ON p.mentor_id = u.id";
+                        $result = mysqli_query($con, $query);
+                        ?>
 
                         <!-- ================ card section start =======================-->
                         <div class="card">
@@ -50,38 +48,44 @@ $result = mysqli_query($con,$query);
                                             <tr>
                                                 <th>Project ID</th>
                                                 <th>Project Name</th>
-                                                <th>Description</th>
-                                                <th>Mentor ID</th>
+                                                <th>Mentor Name</th>
                                                 <th>Technology</th>
                                                 <th>View</th>
-                                               
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                            <?php
-                                                while($row = mysqli_fetch_assoc($result))
-                                                {
-                                                ?>
-                                                <td><?php echo $row['id']; ?></td>
-                                                <td><?php echo $row['project_name'];?></td>
-                                                <td><?php echo $row['description'];?></td>
-                                                <td><?php echo $row['mentor_id'];  ?></td>
-                                                <td><?php echo $row['technology_used'];  ?></td>
-                                                <td>
-                                                <a href="" class="btn btn-icon btn-primary text-white">
-                                                     <i class="fas fa-eye"></i>
-                                                    </a>
-                                                </td>
+                                                <?php
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    ?>
+                                                    <td>
+                                                        <?php echo $row['project_id']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $row['project_name']; ?>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <?php echo $row['first_name'] . " " .$row['last_name']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $row['technology_used']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <a href="../../view_project.php?id=<?php echo $row['project_id'];?>" class="btn btn-icon btn-primary text-white" target="_blank">
+                                                            <i class="fas fa-eye"></i>
+                                                        </a>
+                                                    </td>
                                                 </tr>
-                                                    </a>
+                                                </a>
                                                 </td>
 
 
-                                          <?php
+                                                <?php
                                                 }
-                                          ?>
-                                                </td>
+                                                ?>
+                                            </td>
                                             </tr>
                                         </tbody>
                                     </table>

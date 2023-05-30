@@ -6,7 +6,7 @@
             <script>
                 document.write(new Date().getFullYear());
             </script>
-            , Degine & Developers By Jainam , Sumit, Dev , Divyaraj , Rijvan
+            , Degine & Developers By Jainam , Sumit, Dev, Rijvan
 
         </div>
 

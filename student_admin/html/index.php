@@ -79,7 +79,6 @@ if ($result->num_rows == 1) {
                           </div>
                           <span class="d-block mb-1">Total Students
                             <?php
-                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
                             $total_student_query = "SELECT * from user where user_type = 'student';";
                             $total_student_query_run = mysqli_query($con,$total_student_query);
                             if($total_student = mysqli_num_rows($total_student_query_run ))
@@ -88,7 +87,7 @@ if ($result->num_rows == 1) {
                             }
                             else
                             {
-                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                               echo '<h3 class="card-title text-nowrap mb-2">0</h3>';
                             }
 
                             ?>
@@ -109,7 +108,6 @@ if ($result->num_rows == 1) {
                           </div>
                           <span class="fw-semibold d-block mb-1">Total Faculty
                             <?php
-                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
                           $total_student_query = "SELECT * from user where user_type = 'faculty';";
                             $total_student_query_run = mysqli_query($con,$total_student_query);
                             if($total_student = mysqli_num_rows($total_student_query_run ))
@@ -118,7 +116,7 @@ if ($result->num_rows == 1) {
                             }
                             else
                             {
-                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                               echo '<h3 class="card-title text-nowrap mb-2">0</h3>';
                             }
                             ?>
                           </span>
@@ -142,7 +140,6 @@ if ($result->num_rows == 1) {
                           </div>
                           <span class="fw-semibold d-block mb-1">Approved Students
                           <?php
-                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
                           $total_student_query = "SELECT * from user where status = 'active';";
                             $total_student_query_run = mysqli_query($con,$total_student_query);
                             if($total_student = mysqli_num_rows($total_student_query_run ))
@@ -151,7 +148,7 @@ if ($result->num_rows == 1) {
                             }
                             else
                             {
-                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                               echo '<h3 class="card-title text-nowrap mb-2">0</h3>';
                             }
                             ?>
                           </span>
@@ -175,7 +172,6 @@ if ($result->num_rows == 1) {
                           </div>
                           <span class="fw-semibold d-block mb-1">Pending Students
                           <?php
-                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
                           $total_student_query = "SELECT * from user where status = 'pending';";
                             $total_student_query_run = mysqli_query($con,$total_student_query);
                             if($total_student = mysqli_num_rows($total_student_query_run ))
@@ -184,7 +180,7 @@ if ($result->num_rows == 1) {
                             }
                             else
                             {
-                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                               echo '<h3 class="card-title text-nowrap mb-2">0</h3>';
                             }
                             ?>
                           </span>
@@ -208,7 +204,6 @@ if ($result->num_rows == 1) {
                           </div>
                           <span class="fw-semibold d-block mb-1">Projects
                           <?php
-                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
                           $total_student_query = "SELECT * from projects;";
                             $total_student_query_run = mysqli_query($con,$total_student_query);
                             if($total_student = mysqli_num_rows($total_student_query_run ))
@@ -217,7 +212,7 @@ if ($result->num_rows == 1) {
                             }
                             else
                             {
-                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                               echo '<h3 class="card-title text-nowrap mb-2">0</h3>';
                             }
                             ?>
 
@@ -242,7 +237,6 @@ if ($result->num_rows == 1) {
                           </div>
                           <span class="fw-semibold d-block mb-1">Mentors
                           <?php
-                            include('C:\xampp\htdocs\GOsP\Database\connect.php');
                           $total_student_query = "SELECT * from projects;";
                             $total_student_query_run = mysqli_query($con,$total_student_query);
                             if($total_student = mysqli_num_rows($total_student_query_run ))
@@ -251,7 +245,7 @@ if ($result->num_rows == 1) {
                             }
                             else
                             {
-                               echo '<h3 class="card-title text-nowrap mb-2">No data available</h3>';
+                               echo '<h3 class="card-title text-nowrap mb-2">0</h3>';
                             }
                             ?>
                           </span>

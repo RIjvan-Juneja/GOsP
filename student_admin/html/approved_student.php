@@ -35,7 +35,7 @@
                     <div class="container-xxl flex-grow-1 container-p-y">
                         
 <?php
-include('C:\xampp\htdocs\GOsP\Database\connect.php');
+include('../../Database/connect.php');
 $query = "SELECT *FROM user WHERE user_type = 'student'AND status = 'active';";
 $result = mysqli_query($con,$query);
 ?>

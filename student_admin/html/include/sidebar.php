@@ -63,7 +63,7 @@
         <!-- BRANDS -->
         <li class="menu-item">
             <a href="projects.php" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
                 <div data-i18n="Analytics">PROJECTS</div>
             </a>
         </li>
