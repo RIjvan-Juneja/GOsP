@@ -170,22 +170,12 @@ include "Database/connect.php";
 									<input type="text" class="form-control">
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="recovery">
-										<label class="form-check-label" for="recovery">
-											Recovery
-										</label>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 						<div>
 							<button class="btn btn-primary">Update</button>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>

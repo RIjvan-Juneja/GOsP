@@ -1,64 +1,60 @@
+<?php
+
+include "Database/connect.php";
+// Start the session
+// session_start();
+//check user is logged or not
+// echo $_SESSION['user_id'];
+if (!isset($_SESSION['enrollmentNumber'])) {
+
+} else {
+
+    // echo $_SESSION['enrollmentNumber'];
+    $enrollmentNumber = $_SESSION['enrollmentNumber'];
+    $stmt = $con->prepare("SELECT * FROM `user` where enrollment_number =?");
+    $stmt->bind_param("i", $enrollmentNumber);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows == 1) {
+        // $row = $result->fetch_assoc();
+        // $name = !empty($row['first_name']) ? $row['first_name'] : "";
+    } else {
+        // $name = "";
+    }
+}
+
+?>
+
 <link rel="stylesheet" href="componants/header/header.css">
 
-<!-- <header> -->
-<nav>
-    <div class="navbar">
-        <i class='bx bx-menu'></i>
-        <div class="logo"><a href="#">GOsP</a></div>
-        <div class="nav-links">
-            <div class="sidebar-logo">
-                <span class="logo-name">GOsP</span>
-                <i class='bx bx-x'></i>
-            </div>
-            <ul class="links">
-                <li><a href="index.php">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="project.php">PROJECT</a></li>
-                <li><a href="faq.php">FAQ</a></li>
-                <li><a href="#">CONTACT</a></li>
+<header>
+    <a href="#" class="logo">GOsP</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PROJECT</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <?php
+            if (!isset($_SESSION['user_id'])) {
+                ?>
                 <li>
-                    <a href="#">LOGIN</a>
-                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
-                    <ul class="js-sub-menu sub-menu">
-                        <li><a href="#">STUDENT</a></li>
-                        <li><a href="#">ADMIN</a></li>
+                    <a href="">LOGIN <i class='bx bx-chevron-down'></i></a>
+                    <ul>
+                        <li><a href="http://localhost/GOsP/login.php">STUDENT</a></li>
+                        <li><a href="student_admin/index.php">ADMIN</a></li>
                     </ul>
                 </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- </header> -->
-
-
-<script>
-    // search-box open close js code
-    let navbar = document.querySelector(".navbar");
-
-
-    // sidebar open close js code
-    let navLinks = document.querySelector(".nav-links");
-    let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-    let menuCloseBtn = document.querySelector(".nav-links .bx-x");
-    menuOpenBtn.onclick = function () {
-        navLinks.style.left = "0";
-    }
-    menuCloseBtn.onclick = function () {
-        navLinks.style.left = "-100%";
-    }
-
-
-    // sidebar submenu open close js code
-    let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-    htmlcssArrow.onclick = function () {
-        navLinks.classList.toggle("show1");
-    }
-    let moreArrow = document.querySelector(".more-arrow");
-    moreArrow.onclick = function () {
-        navLinks.classList.toggle("show2");
-    }
-    let jsArrow = document.querySelector(".js-arrow");
-    jsArrow.onclick = function () {
-        navLinks.classList.toggle("show3");
-    }
-</script>
+            <?php } else { ?>
+                <li><a href="#">
+                        <?php echo $_SESSION['user_id']; ?>
+                    </a></li>
+            <?php } ?>
+        </ul>
+    </nav>
+</header>
