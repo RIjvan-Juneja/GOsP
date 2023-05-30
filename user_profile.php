@@ -14,6 +14,7 @@ include "Database/connect.php";
 	<meta charset="UTF-8">
 	<title>User</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css"
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -160,30 +161,36 @@ include "Database/connect.php";
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Login</label>
-									<input type="text" class="form-control">
+									<label>Semester</label>
+									<input type="Number" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Two-factor auth</label>
+									<label>Skills</label>
 									<input type="text" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="recovery">
-										<label class="form-check-label" for="recovery">
-											Recovery
-										</label>
+										<label class="form-label" for="textAreaExample">Bio</label>
+										<textarea class="form-control" id="textAreaExample1" rows="5" placeholder="Update your bio here.."></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="row-md-6">
+								<div class="form-group">
+									<div class="form-check github-link">
+										<label class="form-label" for="github">Github-Link:<i class='bx bxl-github'></i></label>
+										<input type="text" name="github" placeholder="https://github.com/RIjvan-Juneja" class="form-control form-github"/>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div>
+						 <div>
 							<button class="btn btn-primary">Update</button>
-						</div>
+						</div> 
 					</div>
 
 				</div>
