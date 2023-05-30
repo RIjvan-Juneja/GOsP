@@ -36,3 +36,28 @@ body {
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+
+.form-check textarea{
+	position: relative;
+	right: 20px;
+}
+
+.form-check label{
+	margin-right: 50px;
+}
+
+label.form-label {
+    position: relative;
+    right: 20px;
+}
+
+div.form-check.github-link{
+	position: relative;
+	top: 30px;
+	left: 15px;
+}
+input.form-github{
+	position: relative;
+	right: 50px;
+	width: 400px;
+}
