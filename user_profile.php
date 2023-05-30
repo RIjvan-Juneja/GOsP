@@ -156,7 +156,7 @@ include "Database/connect.php";
 						</div>
 					</div>
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-						<h3 class="mb-4">Security Settings</h3>
+						<h3 class="mb-4">Edit Profile</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
