@@ -67,7 +67,7 @@ $result = mysqli_query($con,$query);
                                                 {
                                                 ?>
                                                 <td><?php echo $row['enrollment_number']; ?></td>
-                                                <td><?php echo implode(' ', array($row['first_name'], $row['middle_name'])); ?></td>
+                                                <td><?php echo implode(' ', array($row['first_name'], $row['last_name'])); ?></td>
                                                 <td><?php echo $row['cource'];?></td>
                                                 <td><?php echo $row['branch'];  ?></td>
                                                 <td><?php echo $row['semester'];  ?></td>

@@ -419,3 +419,43 @@ body {
 
 /*=============== Timeline section end =============*/
 
+
+
+ /* responsive code  */
+
+ 
+@media (max-width: 767px) {
+  
+  .top-ten-student .heading .heading-main::after{
+    display: none !important;
+  }
+  .top-ten-mentor .heading .heading-main::after{
+    display: none !important;
+  }
+  .registation-cards-section .heading .heading-main::after{
+    display: none !important;
+
+  }
+  .registation-cards-section .reg-two-card-container{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    margin-left: 32px;
+
+
+  }
+  .registation-cards-section .reg-two-card-container{
+    margin: 0 10px !important;
+    gap: 35px !important;
+  }
+  .top-ten-student{
+    margin:0 !important;
+    padding: 0 !important;
+  }
+  .top-ten-mentor{
+    margin:0 !important;
+    padding: 0 !important;
+  }
+}

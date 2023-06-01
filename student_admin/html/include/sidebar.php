@@ -68,21 +68,7 @@
             </a>
         </li>
 
-        <!-- ORDERS -->
-        <li class="menu-item">
-            <a href="index.php" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">ORDERS</div>
-            </a>
-        </li>
-
-        <!-- OPTIONS -->
-        <li class="menu-item">
-            <a href="index.php" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">OPTIONS</div>
-            </a>
-        </li>
+        
 
 
 

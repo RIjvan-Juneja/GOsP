@@ -9,6 +9,9 @@ function only_alphabet($data)
         return "Invalid ! Please enter only alphabets.";
     } 
 }
+function encryptPassword($password) {
+    return md5($password);
+}
 function validateNumber($data) {
     // Remove all non-numeric characters from the phone number
     $cleanNumber = preg_replace('/\D/', '', $data);
@@ -113,7 +116,7 @@ function generate_password()
     $str = "abcdefghijklmnopqrstuvwxyz1234567890123456789";
     $random_str = str_shuffle($str);
     $ran_three = substr($random_str, 0, 3);
-    $pass = "gmiu@" . $ran_three;
+    $pass = "gosp@" . $ran_three;
     return $pass;
 }
 
@@ -221,5 +224,86 @@ function upload_single_file($file, $target_directory, $validation_check)
         return $response;
     }
 }
+
+
+
+function upload_single_file_new($file, $target_directory, $validation_check)
+{
+    if (isset($file['name'])) {
+        $image_name = $file['name'];
+        $image_size = $file['size'];
+        $image_tmp = $file['tmp_name'];
+        $image_type = $file['type'];
+
+        // rename the file 
+        $new_file_name = $image_name;
+        
+        // check file type 
+        if ($validation_check == 1) {
+            if ($image_type == "image/png" || $image_type == "image/jpg" || $image_type == "image/jpeg" || $image_type == "image/webp") {
+                // check image size
+                if ($image_size < 5242880){
+                    if (!file_exists($target_directory)) {
+                        mkdir($target_directory, 0777, true);
+                    }
+                    // File is an image, move it to the uploads directory
+                    if (move_uploaded_file($image_tmp, $target_directory . $new_file_name)) {
+                        // File was successfully uploaded, add its details to the array of uploaded images
+                        $response = [
+                            'status' => 200,
+                            'message' => $new_file_name,
+                        ];
+                        return $response;
+                    } else {
+                        $response = [
+                            'status' => 400,
+                            'message' => 'File is not uploaded',
+                        ];
+                        return $response;
+                    }
+                } else {
+                    $response = [
+                        'status' => 400,
+                        'message' => 'File Size must be Smaller Than 5 MB.',
+                    ];
+                    return $response;
+                }
+            } else {
+                $response = [
+                    'status' => 400,
+                    'message' => 'Selected File is Not an Image.',
+                ];
+                return $response;
+            }
+        } else {
+            if (!file_exists($target_directory)) {
+                mkdir($target_directory, 0777, true);
+            }
+            // File is an image, move it to the uploads directory
+            if (move_uploaded_file($image_tmp, $target_directory . $new_file_name)) {
+                // File was successfully uploaded, add its details to the array of uploaded images
+                $response = [
+                    'status' => 200,
+                    'message' => $new_file_name,
+                ];
+                return $response;
+            } else {
+                $response = [
+                    'status' => 400,
+                    'message' => 'File is not uploaded',
+                ];
+                return $response;
+            }
+        }
+    } else {
+        $response = [
+            'status' => 400,
+            'message' => 'No Data Found',
+        ];
+        return $response;
+    }
+}
+
+
 
 ?>

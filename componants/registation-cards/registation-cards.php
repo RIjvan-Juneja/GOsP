@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="componants/registation-cards/registation-cards.css">
-<section class="registation-cards-section">
+<section class="registation-cards-section" id="registation-cards-section">
         <div class="heading">
             <h2 class="heading-main"><span class="span-orange">Be a part of</span> GOsP 2023</h2>
         </div>
@@ -10,7 +10,7 @@
                     learn, explore, improve, enhance, build connections and become a team player to nourish your skills
                     and personality. Don’t miss a chance to get well-versed with Open-Source and essential tools like
                     Git and Github under the supervision of excellent mentors.</p>
-                <a href="" class="custome-btn-button">Apply as a Contributor</a>
+                <a href="project.php" class="custome-btn-button">Apply as a Contributor</a>
             </div>
 
             <div class="reg-card">
@@ -20,7 +20,7 @@
                     available throughout the summer to review the pull requests and suggest betterment. Apply to be a
                     mentor at Gyanmanjari Open Source Program and be the foundation of your team.
                 </p>
-                <a href="" class="custome-btn-button">Apply as a mentor</a>
+                <a href="project_regi.php" class="custome-btn-button">Apply as a mentor</a>
             </div>
         </div>
     </section>

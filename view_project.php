@@ -260,7 +260,7 @@ if ($result->num_rows == 1) {
                         <a href="<?php echo $github_repo_link; ?>" class="btn btn-icon btn-primary text-white">
                             View project
                         </a>
-                        <a href="" class="btn btn-icon btn-primary text-white">
+                        <a href="request_contribution.php?id=<?php echo $row['project_id']; ?>" class="btn btn-icon btn-primary text-white">
                             Apply
                         </a>
                     </td>

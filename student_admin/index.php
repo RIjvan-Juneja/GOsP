@@ -80,16 +80,14 @@ if (isset($_POST['sign_in'])) {
 
   <!-- Page -->
   <link rel="stylesheet" href="assets/vendor/css/pages/page-auth.css" />
-  <link rel="stylesheet" href="../componants/header/header.css">
+  <!-- <link rel="stylesheet" href="../componants/header/header.css"> -->
   <link rel="stylesheet" href="../componants/footer/footer.css">
 
 
 </head>
 
 <body>
-  <!-- header  -->
-  <?php include "../componants/header/header.php"; ?>
-
+ 
   <!-- Content -->
   
   <div class="container-xxl">

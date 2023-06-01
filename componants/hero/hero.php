@@ -11,7 +11,7 @@
                     <span class="bold-span">20th May - 10th August 2023</span>
                 </p>
                 <div class="button-container">
-                    <a href="" class="button-orange custome-btn">Register Here</a>
+                    <a href="student_reg.php" class="button-orange custome-btn">Register Here</a>
                 </div>
             </div>
             <img src="assets/images/Hero_Image_Lite_Theme.svg" alt="img" class="hero-img">

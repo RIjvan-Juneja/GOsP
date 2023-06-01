@@ -103,7 +103,7 @@ include "common/function.php";
                                         <h5 class="mb-0">Student Form</h5>
                                     </div>
                                     <div class="card-body">
-                                        <form id="basic_detail" method="POST">
+                                        <form id="stuform" method="POST">
                                             <div class="row mb-3">
                                                 <div class="form-group col-md-4">
                                                     <label for="first_name" class="form-label">First Name </label> <span
@@ -241,7 +241,7 @@ include "common/function.php";
 
     <script>
         $(document).ready(function () {
-            $("#basic_detail").validate({
+            $("#stuform").validate({
                 messages: {
                     first_name: {
                         required: "Please Enter First Name",

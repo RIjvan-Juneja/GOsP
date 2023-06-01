@@ -16,49 +16,25 @@ if (isset($_POST["submit"])) {
   $branch = mysqli_real_escape_string($con, $_POST['branch']);
   $semester = mysqli_real_escape_string($con, $_POST['semester']);
   $github_link = mysqli_real_escape_string($con, $_POST['github_link']);
-  // $user_type = "student";
-  // $is_active = 0;
-  // $is_delete = 0;
+  $user_type = "student";
+  $status = "pending";
+  $target_directory = "uploade/";
+  $photo_name = upload_single_file_new($_FILES['photo'], $target_directory, 1);
+  // // $is_active = 0;
+  // // $is_delete = 0;
+  if ($photo_name['status'] == 200) {
+    $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link,status,photo)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+  $stmt->bind_param("sssssssssisss", $enrollment_number,$user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$cource,$branch,$semester,$github_link,$status,$photo_name['message']);
+  $result = $stmt->execute();
+  if($result){
+    echo "<script>alert('registration successfully, contact  student section for approval')</script>";
+      // header("Location:index.php");
+  }
+} else {
+    echo "Error uploading file. Message: " . $photo_name['message'];
+}
 
-  // first name validation
-  $firstName = $_POST["first_name"];
-  $first_name_error = only_alphabet($firstName);
-
-  //middle name validation
-  $middleName = $_POST["middle_name"];
-  $middle_name_error=only_alphabet($middleName);
-
-  //last name validation
-  $lastName = $_POST["last_name"];
-  $last_name_error=only_alphabet($lastName);
-
-  // phone number validation
-  $phoneNumber = $_POST['phone_number'];
-  $phone_number_error = validateNumber($phoneNumber);
-
-  // enr no validatio
-  $enrNo = $_POST["enrollment_number"];
-  $enrollment_number_error = validateEnrNumber($enrNo);
-
-  // email validation
-  $email_address = $_POST["email"];
-  $email_error = validateEmail($email_address);
-
-  //course validation
-  $course = $_POST["cource"];
-  $cource_error = validateDropDown($course);
-
-  //branch validation
-  $branch_data = $_POST["branch"];
-  $branch_error = validateDropDown($branch_data);
-
-  // semester validation
-  $sem = $_POST["semester"];
-  $semester_error = validateDropDown($sem);
-
-  // $stmt = $con->prepare("INSERT INTO `user`(enrollment_number,user_type,first_name,middle_name,last_name,phone_number,email,cource,branch,semester,github_link)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-  // $stmt->bind_param("sssssssssis", $enrollment_number,$user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$cource,$branch,$semester,$github_link);
-  // $result = $stmt->execute();
+  
 }
 
 ?>
@@ -153,7 +129,7 @@ if (isset($_POST["submit"])) {
                     <h5 class="mb-0">Student Form</h5>
                   </div>
                   <div class="card-body">
-                    <form method="POST" action="student_reg.php">
+                  <form method="POST" action="student_reg.php" enctype="multipart/form-data">
                       <div class="row">
                         <div class="col-md-4 mb-3">
                           <label class="form-label" for="basic-icon-default-fullname">First Name</label>
@@ -281,7 +257,7 @@ if (isset($_POST["submit"])) {
                       <div class="row">
                         <div class="mb-3 col-md-6">
                           <label for="formFile" class="form-label">Professional Photo </label>
-                          <input class="form-control" type="file" id="formFile name="photo" >
+                          <input class="form-control" type="file" id="formFile" name="photo">
                           <span class="form-text"> * only image allowded</span>
 
                         </div>

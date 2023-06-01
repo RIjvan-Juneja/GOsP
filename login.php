@@ -1,17 +1,18 @@
-
 <?php
+session_start();
 include "Database/connect.php";
+include "common/function.php";
 $login_status_error = "";
 // Start the session
 
 // Check if the form is submitted
-if(isset($_POST['sign_in'])) {
+if (isset($_POST['sign_in'])) {
   // Get the form data
   $enrollmentNumber = $_POST['email_username'];
   $password = $_POST['password'];
-
+  $password = encryptPassword($password);
   // Prepare the SQL query
-  $query = "SELECT * FROM user WHERE enrollment_number = ? AND password = ?";
+  $query = "SELECT * FROM user WHERE enrollment_number = ? AND password = ? AND status = active";
   $stmt = $con->prepare($query);
   $stmt->bind_param("ss", $enrollmentNumber, $password);
   $stmt->execute();
@@ -22,9 +23,9 @@ if(isset($_POST['sign_in'])) {
     // User is authenticated
     // Set the enrollment number in the session
     $_SESSION['enrollmentNumber'] = $enrollmentNumber;
-   
+
     // You can perform further actions like redirecting
-    header("Location: index.php?id=".$enrollmentNumber);
+    header("Location: index.php");
     exit();
   } else {
     // Invalid credentials
@@ -65,7 +66,8 @@ if(isset($_POST['sign_in'])) {
 
   <!-- Core CSS -->
   <link rel="stylesheet" href="student_admin/assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="student_admin/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="student_admin/assets/vendor/css/theme-default.css"
+    class="template-customizer-theme-css" />
 
   <!-- Page -->
   <link rel="stylesheet" href="student_admin/assets/vendor/css/pages/page-auth.css" />
@@ -80,49 +82,51 @@ if(isset($_POST['sign_in'])) {
   <?php include "componants/header/header.php"; ?>
 
   <!-- Content -->
-  
-    <div class="authentication-wrapper authentication-basic container-p-y">
-      <div class="authentication-inner">
-        <!-- Register -->
-        <div class="card">
-          <div class="card-body">
-            <!-- Logo -->
-            <div class="app-brand justify-content-center">
-              <span class="app-brand-text demo text-body fw-bolder" style="font-size: 31px;">GOsP</span>
-            </div>
-            <!-- /Logo -->
-            <h4 class="mb-10">Welcome to GOsP! 👋</h4>
-            <form id="formAuthentication" action="index.php" class="mb-3 mt-sm-3" method="POST">
-              <div class="mb-3">
-                <label for="email" class="form-label">Username</label>
-                <input type="text" class="form-control" id="email" name="email_username"
-                  placeholder="Enter your enrollment or username" autofocus required />
-              </div>
-              <div class="mb-3 form-password-toggle">
-                <div class="d-flex justify-content-between">
-                  <label class="form-label" for="password">Password</label>
-                  <a href="auth-forgot-password-basic.html">
-                    <small>Forgot Password?</small>
-                  </a>
-                </div>
-                <div class="input-group input-group-merge">
-                  <input type="password" id="password" class="form-control" name="password"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required />
 
-                </div>
-                <div class="form-text color-red"><?php echo $login_status_error; ?></div>
-              </div>
-
-              <div class="mb-3">
-                <button name="sign_in" class="btn btn-primary d-grid w-100" type="submit">Login</button>
-                <!-- <a href="html/index.php" class="btn btn-primary d-grid w-100">Sign in</a> -->
-              </div>
-            </form>
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <span class="app-brand-text demo text-body fw-bolder" style="font-size: 31px;">GOsP</span>
           </div>
+          <!-- /Logo -->
+          <h4 class="mb-10">Welcome to GOsP! 👋</h4>
+          <form id="formAuthentication" class="mb-3 mt-sm-3" method="POST">
+            <div class="mb-3">
+              <label for="email" class="form-label">Username</label>
+              <input type="text" class="form-control" id="email" name="email_username"
+                placeholder="Enter your enrollment or username" autofocus required />
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Password</label>
+                <a href="auth-forgot-password-basic.html">
+                  <small>Forgot Password?</small>
+                </a>
+              </div>
+              <div class="input-group input-group-merge">
+                <input type="password" id="password" class="form-control" name="password"
+                  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required />
+
+              </div>
+              <div class="form-text color-red" style="color : red;">
+                <?php echo $login_status_error; ?>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button name="sign_in" class="btn btn-primary d-grid w-100" type="submit">Login</button>
+              <!-- <a href="html/index.php" class="btn btn-primary d-grid w-100">Sign in</a> -->
+            </div>
+          </form>
         </div>
-        <!-- /Register -->
       </div>
+      <!-- /Register -->
     </div>
+  </div>
   </div>
 
 

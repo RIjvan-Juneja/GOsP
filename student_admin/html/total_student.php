@@ -53,7 +53,7 @@ $result = mysqli_query($con,$query);
                                                 <th>Course</th>
                                                 <th>Branch</th>
                                                 <th>Semester</th>
-                                                <th>Status</th>
+                                                <!-- <th>Status</th> -->
                                                 <th>VIEW</th>
                                             </tr>
                                         </thead>
@@ -68,7 +68,7 @@ $result = mysqli_query($con,$query);
                                                 <td><?php echo $row['cource'];?></td>
                                                 <td><?php echo $row['branch'];  ?></td>
                                                 <td><?php echo $row['semester'];  ?></td>
-                                                <td><span class="badge bg-label-success me-1">Completed</span></td>
+                                                <!-- <td><span class="badge bg-label-success me-1">Completed</span></td> -->
                                                 <td>
                                                 <a href="" class="btn btn-icon btn-primary text-white">
                                                      <i class="fas fa-eye"></i>

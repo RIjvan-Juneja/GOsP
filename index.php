@@ -1,4 +1,8 @@
+<?php  
+session_start();
+// echo $_SESSION['enrollmentNumber'];
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,27 +1,58 @@
 <?php
-
+// session_start();
 include "Database/connect.php";
+
 // Start the session
 // session_start();
-//check user is logged or not
-// echo $_SESSION['user_id'];
-if (!isset($_SESSION['enrollmentNumber'])) {
+// //check user is logged or not
+// echo $_SESSION['enrollmentNumber'];
+// if (isset($_GET['id'])) {
+//     $enrollmentNumber = $_GET['id'];
 
-} else {
+//     $stmt = $con->prepare("SELECT * FROM `user` where enrollment_number =?");
+//     $stmt->bind_param("i", $enrollmentNumber);
+//     $stmt->execute();
+//     $result = $stmt->get_result();
+//     if ($result->num_rows == 1) {
+//         $row = $result->fetch_assoc();
+//         $name = !empty($row['first_name']) ? $row['first_name'] : "";
+//     } else {
+//         $name = "";
+//     }
 
-    // echo $_SESSION['enrollmentNumber'];
-    $enrollmentNumber = $_SESSION['enrollmentNumber'];
+// }
+
+//  echo "eroor";
+// } else {
+
+    
+    if (isset($_SESSION['enrollmentNumber'])){
+            $enrollmentNumber = $_SESSION['enrollmentNumber'];
     $stmt = $con->prepare("SELECT * FROM `user` where enrollment_number =?");
     $stmt->bind_param("i", $enrollmentNumber);
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows == 1) {
-        // $row = $result->fetch_assoc();
-        // $name = !empty($row['first_name']) ? $row['first_name'] : "";
+        $row = $result->fetch_assoc();
+        $name = !empty($row['first_name']) ? $row['first_name'] : "";
     } else {
-        // $name = "";
+        $name = "";
     }
-}
+
+    }
+//     echo $_SESSION['enrollmentNumber'];
+//     $enrollmentNumber = $_SESSION['enrollmentNumber'];
+//     $stmt = $con->prepare("SELECT * FROM `user` where enrollment_number =?");
+//     $stmt->bind_param("i", $enrollmentNumber);
+//     $stmt->execute();
+//     $result = $stmt->get_result();
+//     if ($result->num_rows == 1) {
+//         $row = $result->fetch_assoc();
+//         $name = !empty($row['first_name']) ? $row['first_name'] : "";
+//     } else {
+//         $name = "";
+//     }
+// }
 
 ?>
 
@@ -35,14 +66,28 @@ if (!isset($_SESSION['enrollmentNumber'])) {
 
     <nav class="navbar">
         <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">PROJECT</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="project.php">PROJECT</a></li>
+            <li><a href="faq.php">FAQ</a></li>
             <li><a href="#">CONTACT</a></li>
             <?php
-            if (!isset($_SESSION['user_id'])) {
+            if (isset($_SESSION['enrollmentNumber'])) {
                 ?>
+                <li>
+
+                <a href="">
+                    <?php echo $name; ?>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul>
+                    <li><a href="user_profile.php">Profile</a></li>
+                    <li><a href="logout.php">LogOut</a></li>
+                </ul>
+                </li>
+
+
+            <?php } else { ?>
                 <li>
                     <a href="">LOGIN <i class='bx bx-chevron-down'></i></a>
                     <ul>
@@ -50,10 +95,6 @@ if (!isset($_SESSION['enrollmentNumber'])) {
                         <li><a href="student_admin/index.php">ADMIN</a></li>
                     </ul>
                 </li>
-            <?php } else { ?>
-                <li><a href="#">
-                        <?php echo $_SESSION['user_id']; ?>
-                    </a></li>
             <?php } ?>
         </ul>
     </nav>
