@@ -6,6 +6,7 @@ $stmt = $con->prepare("SELECT u.first_name, u.last_name, p.id as project_id, p.p
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows == 1) {
+    
     $row = $result->fetch_assoc();
     $mentor_name = $row['first_name'] . " " . $row['last_name'];
     $project_name = !empty($row['project_name']) ? $row['project_name'] : "";

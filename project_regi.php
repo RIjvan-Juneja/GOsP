@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
     $project_description = mysqli_real_escape_string($con, $_POST['project_description']);
     $project_tags = mysqli_real_escape_string($con, $_POST['project_tags']);
     $is_active = 1;
-    $is_delete = 1;
+    $is_delete = 0;
 
     $stmt = $con->prepare("INSERT INTO `projects`(project_name,description,project_tag,mentor_id,technology_used,github_repo_link,group_link,is_active,is_delete)VALUES (?,?,?,?,?,?,?,?,?)");
     $stmt->bind_param("sssisssii", $project_name,$project_description,$project_tags,$id_mentor,$technology_used,$github_repo_link,$group_link,$is_active,$is_delete);

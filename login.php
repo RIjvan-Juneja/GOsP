@@ -12,7 +12,7 @@ if (isset($_POST['sign_in'])) {
   $password = $_POST['password'];
   $password = encryptPassword($password);
   // Prepare the SQL query
-  $query = "SELECT * FROM user WHERE enrollment_number = ? AND password = ? AND status = active";
+  $query = "SELECT * FROM user WHERE enrollment_number = ? AND password = ?";
   $stmt = $con->prepare($query);
   $stmt->bind_param("ss", $enrollmentNumber, $password);
   $stmt->execute();

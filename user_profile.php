@@ -104,7 +104,6 @@ if (isset($_SESSION['enrollmentNumber'])) {
 							Edit profile
 						</a>
 
-
 					</div>
 				</div>
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
@@ -189,12 +188,13 @@ if (isset($_SESSION['enrollmentNumber'])) {
 									<a href="#" class="card-link">Accept</a>
 									<a href="#" class="card-link">Reject</a>
 								</div>
-							</div>
+							
 
 						<?php } ?>
+						</div>
 					</div>
 					<div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
-						<<?php
+						<?php
 							$s = "pending";
 							// get
 							$stmt3 = $con->prepare("SELECT * FROM `request` Where mentor_id = ? AND status = ?");
