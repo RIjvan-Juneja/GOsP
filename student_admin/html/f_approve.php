@@ -1,8 +1,13 @@
 <?php
+include "../../common/function.php";
 include('../../Database/connect.php');
+
 $id = $_GET['id'];
-$stmt = $con->prepare("UPDATE `user` SET status = 'active' WHERE id = ? ");
-$stmt->bind_param("s", $id);
+$password = generate_password();
+echo $password;
+$enc_password = encryptPassword($password);
+$stmt = $con->prepare("UPDATE `user` SET status = 'active', password = ? WHERE id = ? ");
+$stmt->bind_param("ss",$enc_password,$id);
 $result = $stmt->execute();
 if ($result) {
     $_SESSION['status'] = "Status changed Successfully";

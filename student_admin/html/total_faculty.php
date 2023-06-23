@@ -35,7 +35,7 @@
 
 <?php
 include('../../Database/connect.php');
-$query = "SELECT * FROM user WHERE user_type = 'faculty';";
+$query = "SELECT * FROM user WHERE user_type = 'faculty'";
 $result = mysqli_query($con,$query);
 ?>
 

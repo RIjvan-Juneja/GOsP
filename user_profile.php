@@ -36,6 +36,7 @@ if (isset($_SESSION['enrollmentNumber'])) {
 		$skills = !empty($row['skills']) ? $row['skills'] : "";
 		$description = !empty($row['description']) ? $row['description'] : "";
 		$github_link = !empty($row['github_link']) ? $row['github_link'] : "";
+		$photo_name  = !empty($row['photo']) ? $row['photo'] : "";
 
 	}
 
@@ -69,7 +70,7 @@ if (isset($_SESSION['enrollmentNumber'])) {
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
 						<div class="img-circle text-center mb-3">
-							<img src="assets/images/user2.jpg" alt="Image" class="shadow">
+							<img src="./uploade/<?php echo $photo_name; ?>" alt="Image" class="shadow">
 						</div>
 						<h4 class="text-center">
 							<?php echo $first_name; ?>

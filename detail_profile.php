@@ -1,3 +1,31 @@
+
+<?php
+include "Database/connect.php";
+
+$enrollmentNumber = $_GET['er'];
+$stmt = $con->prepare("SELECT * FROM `user` where enrollment_number =?");
+	$stmt->bind_param("i", $enrollmentNumber);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	if ($result->num_rows == 1) {
+		$row = $result->fetch_assoc();
+		$id = !empty($row['id']) ? $row['id'] : "";
+		$first_name = !empty($row['first_name']) ? $row['first_name'] : "";
+		$middle_name = !empty($row['middle_name']) ? $row['middle_name'] : "";
+		$last_name = !empty($row['last_name']) ? $row['last_name'] : "";
+		$er_num = !empty($row['enrollment_number']) ? $row['enrollment_number'] : "";
+		$email = !empty($row['email']) ? $row['email'] : "";
+		$branch = !empty($row['branch']) ? $row['branch'] : "";
+		$semester = !empty($row['semester']) ? $row['semester'] : "";
+		$skills = !empty($row['skills']) ? $row['skills'] : "";
+		$description = !empty($row['description']) ? $row['description'] : "";
+		$github_link = !empty($row['github_link']) ? $row['github_link'] : "";
+		$photo_name  = !empty($row['photo']) ? $row['photo'] : "";
+
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +48,7 @@
                 <tbody>
                     <tr>
                         <td><b>Name</b></td>
-                        <td>Juneja Rijvan Riyajbhai</td>
+                        <td><?php echo $first_name; ?></td>
                         <td><b>Enrollment Number </b></td>
                         <td>201290116020</td>
                         <td rowspan="4" width="100px"><img src="assets/images/user2.jpg" alt="" width="180px"></td>
