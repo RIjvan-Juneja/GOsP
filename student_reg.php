@@ -138,7 +138,7 @@ if (isset($_POST["submit"])) {
                               <i class="bx bx-user"></i>
                             </span>
                             <input type="text" name="first_name" class="form-control" id="basic-icon-default-fullname"
-                              placeholder="Your name" />
+                              placeholder="Your name" required/>
                           </div>
                           <div class="form-text color-red"><?php echo $first_name_error; ?></div>
                         </div>
@@ -149,7 +149,7 @@ if (isset($_POST["submit"])) {
                               <i class="bx bx-user"></i>
                             </span>
                             <input type="text" name="middle_name" class="form-control" id="basic-icon-default-fullname"
-                              placeholder="father name" />
+                              placeholder="father name" required />
                           </div>
                           <div class="form-text color-red"><?php echo $middle_name_error; ?></div>
                         </div>
@@ -160,7 +160,7 @@ if (isset($_POST["submit"])) {
                               <i class="bx bx-user"></i>
                             </span>
                             <input type="text" name="last_name" class="form-control" id="basic-icon-default-fullname"
-                              placeholder="Surename" />
+                              placeholder="Surename" required />
                           </div>
                           <div class="form-text color-red"><?php echo $last_name_error; ?></div>
                         </div>
@@ -173,7 +173,7 @@ if (isset($_POST["submit"])) {
                               <i class="bx bx-phone"></i>
                             </span>
                             <input type="number" name="phone_number" class="form-control" id="basic-icon-default-fullname"
-                              placeholder="9999999999" />
+                              placeholder="9999999999" required />
                           </div>
                           <div class="form-text color-red"><?php echo $phone_number_error; ?></div>
                         </div>
@@ -185,7 +185,7 @@ if (isset($_POST["submit"])) {
                               <i class="bx bx-user"></i>
                             </span>
                             <input type="number" name="enrollment_number" class="form-control" id="basic-icon-default-fullname"
-                              placeholder="111111111111" />
+                              placeholder="111111111111" required />
                           </div>
                           <div class="form-text color-red"><?php echo $enrollment_number_error; ?></div>
                         </div>
@@ -196,7 +196,7 @@ if (isset($_POST["submit"])) {
                         <label class="form-label" for="basic-icon-default-email">Email</label>
                         <div class="input-group input-group-merge">
                           <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                          <input type="text" name="email" id="basic-icon-default-email" class="form-control" placeholder="xyz2@gmail.com" />
+                          <input type="text" name="email" id="basic-icon-default-email" class="form-control" placeholder="xyz2@gmail.com" required />
                         </div>
                         <div class="form-text">You can use letters, numbers & periods</div>
                         <div class="form-text color-red"><?php echo $email_error; ?></div>
@@ -205,7 +205,7 @@ if (isset($_POST["submit"])) {
                         <div class="mb-3 col-md-4">
                           <label for="exampleFormControlSelect1" class="form-label">Cource</label>
 
-                          <select name="cource" class="form-select" id="exampleFormControlSelect1" >
+                          <select name="cource" class="form-select" id="exampleFormControlSelect1" required>
                             <option value="">select cource</option>
                             <option value="BE">B.E</option>
                             <option value="MCA">MCA</option>
@@ -216,7 +216,7 @@ if (isset($_POST["submit"])) {
                         </div>
                         <div class="mb-3 col-md-4">
                           <label for="exampleFormControlSelect1" class="form-label">Branch</label>
-                          <select name="branch" class="form-select" id="exampleFormControlSelect1" >
+                          <select name="branch" class="form-select" id="exampleFormControlSelect1" required>
                             <option value="">select  branch</option>
                             <option value="IT">Information Technology</option>
                             <option value="CS">Computer Science</option>
@@ -229,7 +229,7 @@ if (isset($_POST["submit"])) {
                         </div>
                         <div class="mb-3 col-md-4">
                           <label for="exampleFormControlSelect1" class="form-label">Semester</label>
-                          <select name="semester" class="form-select" id="exampleFormControlSelect1" >
+                          <select name="semester" class="form-select" id="exampleFormControlSelect1" required>
                             <option value="">select semester</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -251,20 +251,20 @@ if (isset($_POST["submit"])) {
                             <i class='bx bxl-github'></i>
                           </span>
                           <input type="text" name="github_link" class="form-control"
-                            placeholder="https://github.com/RIjvan-Juneja" />
+                            placeholder="https://github.com/RIjvan-Juneja" required />
                         </div>
                       </div>
                       <div class="row">
                         <div class="mb-3 col-md-6">
                           <label for="formFile" class="form-label">Professional Photo </label>
-                          <input class="form-control" type="file" id="formFile" name="photo">
+                          <input class="form-control" type="file" id="formFile" name="photo" required />
                           <span class="form-text"> * only image allowded</span>
 
                         </div>
 
                         <div class="mb-3 col-md-6">
                           <label for="formFile" class="form-label">collage ID Card</label>
-                          <input class="form-control" type="file" id="formFile" name="collage_id" >
+                          <input class="form-control" type="file" id="formFile" name="collage_id" required />
                           <span class="form-text"> * only pdf allowded</span>
 
                         </div>

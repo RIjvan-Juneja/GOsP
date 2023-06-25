@@ -17,24 +17,24 @@ if (isset($_POST["submit"])) {
 
 
     // first name validation
-    $firstName = $_POST["first_name"];
-        $first_name_error = only_alphabet($firstName);
+    // $firstName = $_POST["first_name"];
+    //     $first_name_error = only_alphabet($firstName);
      
-    // middle name validation    
-    $middleName = $_POST["middle_name"];
-        $middle_name_error = only_alphabet($middleName);
+    // // middle name validation    
+    // $middleName = $_POST["middle_name"];
+    //     $middle_name_error = only_alphabet($middleName);
     
-    //last name validation
-    $lastName = $_POST["last_name"];
-        $last_name_error = only_alphabet($lastName);
+    // //last name validation
+    // $lastName = $_POST["last_name"];
+    //     $last_name_error = only_alphabet($lastName);
 
-    //phone no validation
-    $phoneNo = $_POST["phone_number"];
-        $phone_error = validateNumber($phoneNo);
+    // //phone no validation
+    // $phoneNo = $_POST["phone_number"];
+    //     $phone_error = validateNumber($phoneNo);
 
-    //email validation
-    $mail = $_POST["email"];
-        $email_error = validateEmail($mail);
+    // //email validation
+    // $mail = $_POST["email"];
+    //     $email_error = validateEmail($mail);
 
 //   $stmt = $con->prepare("INSERT INTO `user`(user_type,first_name,middle_name,last_name,phone_number,email,github_link)VALUES (?,?,?,?,?,?,?)");
 //   $stmt->bind_param("sssssss", $user_type,$first_name,$middle_name,$last_name,$phone_number,$email,$github_link);
@@ -143,9 +143,9 @@ if (isset($_POST["submit"])) {
                                                             <i class="bx bx-user"></i>
                                                         </span>
                                                         <input type="text" class="form-control"
-                                                            name="first_name" placeholder="Your Name" />
+                                                            name="first_name" placeholder="Your Name" required />
                                                     </div>
-                                                    <div class="color-red"><?php echo $first_name_error; ?></div>
+                                                    <!-- <div class="color-red"><?php echo $first_name_error; ?></div> -->
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <label class="form-label" for="basic-icon-default-fullname">Middle
@@ -156,9 +156,9 @@ if (isset($_POST["submit"])) {
                                                             <i class="bx bx-user"></i>
                                                         </span>
                                                         <input type="text" class="form-control"
-                                                            name="middle_name" placeholder="Father Name" />
+                                                            name="middle_name" placeholder="Father Name" required />
                                                     </div>
-                                                    <div class="color-red"><?php echo $middle_name_error; ?></div>
+                                                    <!-- <div class="color-red"><?php echo $middle_name_error; ?></div> -->
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <label class="form-label" for="basic-icon-default-fullname">Last
@@ -169,9 +169,9 @@ if (isset($_POST["submit"])) {
                                                             <i class="bx bx-user"></i>
                                                         </span>
                                                         <input type="text" class="form-control"
-                                                            name="last_name" placeholder="Surename" />
+                                                            name="last_name" placeholder="Surename" required />
                                                     </div>
-                                                    <div class="color-red"><?php echo $last_name_error; ?></div>
+                                                    <!-- <div class="color-red"><?php echo $last_name_error; ?></div> -->
                                                 </div>
                                             </div>
 
@@ -185,8 +185,8 @@ if (isset($_POST["submit"])) {
                                                             <i class="bx bx-phone"></i>
                                                         </span>
                                                         <input type="number" class="form-control"
-                                                            name="phone_number" placeholder="9999999999" />
-                                                    </div><div class="color-red"><?php echo $phone_error; ?></div>
+                                                            name="phone_number" placeholder="9999999999" required />
+                                                    <!-- </div><div class="color-red"><?php echo $phone_error; ?></div> -->
 
                                                 </div>
 
@@ -197,17 +197,17 @@ if (isset($_POST["submit"])) {
                                                         <span class="input-group-text"><i
                                                                 class="bx bx-envelope"></i></span>
                                                         <input type="text" name="email"
-                                                            class="form-control" placeholder="xyz@gmail.com" />
+                                                            class="form-control" placeholder="xyz@gmail.com" required/>
                                                     </div>
                                                     <div class="form-text">You can use letters, numbers & periods</div>
-                                                    <div class="color-red"><?php echo $email_error; ?></div>
+                                                    <!-- <div class="color-red"><?php echo $email_error; ?></div> -->
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label for="formFile" class="form-label">Professional Photo</label>
-                                                    <input class="form-control" name="photo" type="file" id="formFile">
+                                                    <input class="form-control" name="photo" type="file" id="formFile" required>
                                                 </div>
 
                                                 <div class="mb-3 col-md-6">
@@ -219,7 +219,7 @@ if (isset($_POST["submit"])) {
                                                             <i class='bx bxl-github'></i>
                                                         </span>
                                                         <input type="text" name="github_link" class="form-control"
-                            placeholder="https://github.com/RIjvan-Juneja" />
+                            placeholder="https://github.com/RIjvan-Juneja" required />
                                                     </div>
                                                 </div>
                                             </div>
