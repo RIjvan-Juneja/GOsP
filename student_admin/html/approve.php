@@ -29,28 +29,27 @@ if ($result) {
     $_SESSION['status'] = "Status changed Successfully";
     $_SESSION['status_code'] = "success";
     echo $_SESSION['status'];
-    // echo "<script>setTimeout(function(){window.location='pending_student.php'},1000);</script>";
+    echo "<script>setTimeout(function(){window.location='pending_student.php'},1000);</script>";
 
-    // // Account details
-    // $apiKey = urlencode('NzE3MjcyMzc1NTVhNDY1MDQxNGM0MTZkNTE1OTM2NzA=');
-    // // Message details
-    // $numbers = array($phone_number);
-    // $sender = urlencode('TXTLCL');
-    // $message = rawurlencode($msg);
+    // Account details
+    $apiKey = urlencode('NzE3MjcyMzc1NTVhNDY1MDQxNGM0MTZkNTE1OTM2NzA=');
+    // Message details
+    $numbers = array($phone_number);
+    $sender = urlencode('TXTLCL');
+    $message = rawurlencode($msg);
 
-    // $numbers = implode(',', $numbers);
+    $numbers = implode(',', $numbers);
 
-    // // Prepare data for POST request
-    // $data = array('apikey' => $apiKey, 'numbers' => $numbers, 'sender' => $sender, 'message' => $message);
-    // // Send the POST request with cURL
-    // $ch = curl_init('https://api.textlocal.in/send/');
-    // curl_setopt($ch, CURLOPT_POST, true);
-    // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    // $response = curl_exec($ch);
-    // curl_close($ch);
-    // Process your response here
-    // echo $response;
+    // Prepare data for POST request
+    $data = array('apikey' => $apiKey, 'numbers' => $numbers, 'sender' => $sender, 'message' => $message);
+    // Send the POST request with cURL
+    $ch = curl_init('https://api.textlocal.in/send/');
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    echo $response;
 
 } else {
     $_SESSION['status'] = "laboratories Deletion Failed";
