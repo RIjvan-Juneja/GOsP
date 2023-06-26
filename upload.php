@@ -5,6 +5,8 @@ include "common/function.php";
 //         $stmt->bind_param("sssssssssis", $project_name,$description,$project_tag,$technology_used,$github_repo_link,$group_link );
 //         $result = $stmt->execute();
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -165,142 +167,7 @@ include "common/function.php";
 
 
     <!--
-	<script>
-        $(document).ready(function () {
-            $("#stuform").validate({
-                messages: {
-                    first_name: {
-                        required: "Please Enter First Name",
-                        pattern: 'Only Letters allowed',
-                        nowhitespace: 'Spaces are not allowed'
-                    },
-                    middle_name: {
-                        required: "Please Enter Middle Name",
-                        pattern: 'Only Letters allowed',
-                        nowhitespace: 'Spaces are not allowed'
-                    },
-                    last_name: {
-                        required: "Please Enter Last Name",
-                        pattern: 'Only Letters allowed',
-                        nowhitespace: 'Spaces are not allowed'
-                    },
-                    phone_number: {
-                        required: "Please Enter phone Number",
-                        minlength: "Number must be 10 digits",
-                        maxlength: "Number must be 10 digits",
-                        nowhitespace: 'Spaces are not allowed'
-                    },
-                    email: {
-                        required: "Please Enter Email",
-                        email: 'Invalid email format.',
-                        nowhitespace: 'Spaces are not allowed'
-                    },
-                    github_link: {
-                        required: 'GitHub link is required.',
-                        pattern: 'Invalid GitHub link format.'
-                    },
-                    enrollment_number: {
-                        required: "Please Enter Enrollment Number",
-                        minlength: " Er Number must be 12 digits",
-                        maxlength: " Er Number must be 12 digits",
-                    },
-                    course: {
-                        required: "Please select Course",
-                    },
-                    branch: {
-                        required: "Please select Branch",
-                    },
-                    semester: {
-                        required: "Please select Semester",
-                    },
-                    collage_id: {
-                        required: 'Please select a file.',
-                        extension: 'Only PDF files are allowed.'
-                    },
-                    // photo: {
-                        // required: true,
-                        // accept: 'image/*'
-                    // }
-
-                },
-                rules: {
-                    first_name: {
-                        required: true,
-                        pattern: /^[a-zA-Z\s]+$/,
-                        nowhitespace: true
-                    },
-                    middle_name: {
-                        required: true,
-                        pattern: /^[a-zA-Z\s]+$/,
-                        nowhitespace: true
-                    },
-                    last_name: {
-                        required: true,
-                        pattern: /^[a-zA-Z\s]+$/,
-                        nowhitespace: true
-                    },
-                    phone_number: {
-                        required: true,
-                        digits: true,
-                        minlength: 10,
-                        maxlength: 10,
-                        nowhitespace: true
-                    },
-                    email: {
-                        required: true,
-                        email: true,
-                        nowhitespace: true
-                    },
-                    github_link: {
-                        required: true,
-                        pattern: /^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+$/
-                    },
-                    enrollment_number: {
-                        required: true,
-                        digits: true,
-                        minlength: 12,
-                        maxlength: 12,
-                    },
-                    course: {
-                        required: true,
-                    },
-                    branch: {
-                        required: true,
-                    },
-                    semester: {
-                        required: true,
-                    },
-                    collage_id: {
-                        required: true,
-                        extension: 'pdf'
-                    },
-                    // photo: {
-                        // required: 'Please select a file.',
-                        // accept: 'Only image files are allowed.'
-                    // }
-                },
-
-                errorElement: 'span',
-                errorPlacement: function (error, element) {
-                    error.insertAfter(element);
-                },
-
-                submitHandler: function (form) {
-                    // If the form is valid, send it to the server
-                    $.ajax({
-                        url: 'store_data.php',
-                        type: 'POST',
-                        data: $(form).serialize(),
-                        success: function (response) {
-                            $('#message').text(response);
-                            $(form)[0].reset(); // Clear the form
-                        }
-                    });
-                }
-
-            });
-        });
-    </script> 
+	 
 	-->
 
 </body>

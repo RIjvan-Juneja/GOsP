@@ -2,7 +2,7 @@
 <?php
 
 $project_id = mysqli_real_escape_string($con, $_GET['id']);
-$stmt = $con->prepare("SELECT u.first_name, u.last_name, p.id as project_id, p.project_name, p.description, p.technology_used, p.github_repo_link FROM projects p JOIN user u ON p.mentor_id = u.id Where p.id = $project_id AND p.is_active=1 AND p.is_delete=0");
+$stmt = $con->prepare("SELECT u.first_name,u.email, u.last_name, p.id as project_id, p.project_name, p.description, p.technology_used, p.github_repo_link FROM projects p JOIN user u ON p.mentor_id = u.id Where p.id = $project_id AND p.is_active=1 AND p.is_delete=0");
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows == 1) {
@@ -13,6 +13,7 @@ if ($result->num_rows == 1) {
     $description = !empty($row['description']) ? $row['description'] : "";
     $technology_used = !empty($row['technology_used']) ? $row['technology_used'] : "";
     $github_repo_link = !empty($row['github_repo_link']) ? $row['github_repo_link'] : "";
+    $email = !empty($row['email']) ? $row['email'] : "";
 } else {
     echo "No Data Found";
     exit();
@@ -255,17 +256,27 @@ if ($result->num_rows == 1) {
                 </tr>
                 <tr>
                     <td id="col-1">
+                       Contact here for apply
+                    </td>
+                    <td id="col-2" class="text-left">
+                        <?php echo $email;   ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="col-1">
                         Action
                     </td>
                     <td id="col-2" class="text-left">
                         <a href="<?php echo $github_repo_link; ?>" class="btn btn-icon btn-primary text-white">
                             View project
                         </a>
-                        <a href="../GOsP/email.php" class="btn btn-icon btn-primary text-white">
+                        <!-- <a href="../GOsP/email.php" class="btn btn-icon btn-primary text-white">
                             Apply
-                        </a>
+                        </a> -->
                     </td>
                 </tr>
+                
+               
             </tbody>
         </table>
         
