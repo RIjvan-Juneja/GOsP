@@ -67,10 +67,15 @@ $result = mysqli_query($con,$query);
                                                 <td><?php echo $row['phone_number'];?></td>
                                                 <td><?php echo $row['email'];  ?></td>
                                                 <td><?php echo $row['status'];  ?></td>
-                                                <td><a href="f_approve.php?id=<?php echo $row['id']?>" class="btn btn-icon btn-primary text-white">
-                                                <i class="tf-icons bx bx-check fs-5"></i>
-                                                    </a>
-                                                    <a href="f_reject.php?id=<?php echo $row['id']?>" class="btn btn-icon btn-secondary text-white">
+                                                <td><a href="" class="btn btn-icon btn-primary text-white">
+                                                <div class="card-body">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Left</button>
+                                    <button type="button" class="btn btn-primary">Middle</button>
+                                    <button type="button" class="btn btn-primary">Right</button>
+                                </div>
+                            </div>
+                                                    <a href="" class="btn btn-icon btn-secondary text-white">
                                                         <i class='tf-icons bx bx-x fs-5'></i>
                                                     </a></td>
                                                     </tr>
